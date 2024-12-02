@@ -8,7 +8,7 @@ export default function Hero() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mt-32 mb-16">
           <div className="space-y-4">
             <h1 className="font-playfair text-white text-5xl md:text-6xl lg:text-7xl font-medium leading-tight">
-              Experience Luxury in Nature's Embrace
+              Experience Luxury in Nature&apos;s Embrace
             </h1>
           </div>
           <div className="flex items-center">
