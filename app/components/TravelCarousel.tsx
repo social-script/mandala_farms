@@ -46,14 +46,6 @@ const categories: Category[] = [
 export default function TravelCarousel() {
   const [selectedCategory, setSelectedCategory] = useState(0)
 
-  const nextCategory = () => {
-    setSelectedCategory((prev) => (prev + 1) % categories.length)
-  }
-
-  const prevCategory = () => {
-    setSelectedCategory((prev) => (prev - 1 + categories.length) % categories.length)
-  }
-
   return (
     <section className="container mx-auto px-4 py-24">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -82,7 +74,7 @@ export default function TravelCarousel() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            At our farm, every moment is a celebration of nature's beauty and the joy of animal companionship. Embrace a lifestyle that nurtures both your spirit and the environment around you.
+            At our farm, every moment is a celebration of nature&apos;s beauty and the joy of animal companionship. Embrace a lifestyle that nurtures both your spirit and the environment around you.
           </motion.p>
           <CategoryList 
             categories={categories} 

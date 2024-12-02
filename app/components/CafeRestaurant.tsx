@@ -19,10 +19,10 @@ export default function CafeRestaurant() {
               />
               <div className="absolute bottom-8 left-8 bg-[#2F4538]/90 backdrop-blur-sm rounded-[1rem] p-6 max-w-[280px]">
                 <p className="font-poppins text-white/90 text-sm leading-relaxed">
-                  "A perfect blend of local flavors and stunning views. Don't miss the sunset from our terrace!"
+                  &ldquo;A perfect blend of local flavors and stunning views. Don&apos;t miss the sunset from our terrace!&rdquo;
                 </p>
                 <p className="font-poppins text-[#E8FF8B] text-sm mt-2">
-                  - Chef's Recommendation
+                  - Chef&apos;s Recommendation
                 </p>
               </div>
             </div>

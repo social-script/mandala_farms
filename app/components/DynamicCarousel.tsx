@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronLeft, ChevronRight, Leaf, Home, Coffee, LucideIcon } from 'lucide-react'
+import { Leaf, Home, Coffee, LucideIcon } from 'lucide-react'
 import Image from 'next/image'
 
 interface Category {
@@ -18,10 +18,10 @@ interface ImageCarouselProps {
   selectedCategory: number
 }
 
-interface CarouselNavigationProps {
-  onNext: () => void
-  onPrev: () => void
-}
+// interface CarouselNavigationProps {
+//   onNext: () => void
+//   onPrev: () => void
+// }
 
 interface CategoryListProps {
   categories: Category[]
@@ -86,7 +86,7 @@ export default function DynamicCarousel() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Indulge in a harmonious blend of luxury and sustainability, where every moment is crafted to create unforgettable memories.
+            Indulge in a harmonious blend of luxury and sustainability, where every moment is crafted to create unforgettable memories in nature&apos;s embrace.
           </motion.p>
           <CategoryList 
             categories={categories} 
