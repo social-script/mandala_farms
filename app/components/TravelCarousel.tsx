@@ -25,23 +25,25 @@ interface CategoryListProps {
 const categories: Category[] = [
   { 
     id: 1, 
-    name: "How to Book Your Stay",
-    description: "Visit our website to check availability and make reservations.",
-    image: "https://images.unsplash.com/photo-1615880484746-a134be9a6ecf?w=800&q=80"
+    name: "Valley View Suites",
+    description: "Luxurious accommodations with panoramic views of Araku Valley",
+    image: "https://images.unsplash.com/photo-1531932594968-e5e5e9dee95a",
   },
   { 
     id: 2, 
-    name: "Dining at Our Café and Restaurant",
-    description: "Savor delicious meals made from locally sourced ingredients.",
-    image: "https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?w=800&q=80"
+    name: "Wellness Sanctuary",
+    description: "Engage in activities that connect you with nature and local culture.",
+    image: "https://images.unsplash.com/photo-1589923188900-85dae523342b",
   },
   { 
     id: 3, 
-    name: "Unique Experiences Await You",
-    description: "Engage in activities that connect you with nature and local culture.",
-    image: "https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?w=800&q=80"
+    name: "Culinary Journey",
+    description: "Experience farm-to-table dining with local organic ingredients",
+    image: "https://images.unsplash.com/photo-1603554593710-89285666b691",
+
   },
 ]
+
 
 export default function TravelCarousel() {
   const [selectedCategory, setSelectedCategory] = useState(0)
@@ -91,12 +93,13 @@ function ImageCarousel({ categories, selectedCategory }: ImageCarouselProps) {
   const getCardPosition = (index: number) => {
     const diff = (index - selectedCategory + categories.length) % categories.length
     if (diff === 0) return 'center'
-    if (diff === 1 || diff === -2) return 'right'
-    return 'left'
+    if (diff === 1) return 'right'
+    if (diff === categories.length - 1) return 'left'
+    return 'hidden'  // Hide other cards
   }
 
   return (
-    <div className="relative w-full max-w-[800px] h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px]">
+    <div className="relative w-full max-w-[1000px] h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px]">
       <AnimatePresence initial={false}>
         {categories.map((category, index) => (
           <motion.div
@@ -104,31 +107,33 @@ function ImageCarousel({ categories, selectedCategory }: ImageCarouselProps) {
             className="absolute top-1/2 left-1/2"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{
-              opacity: getCardPosition(index) === 'center' ? 1 : 0.3,
-              scale: getCardPosition(index) === 'center' ? 1 : 0.85,
+              opacity: getCardPosition(index) === 'hidden' ? 0 : 
+                      getCardPosition(index) === 'center' ? 1 : 0.6,
+              scale: getCardPosition(index) === 'center' ? 1 : 0.9,
               x: getCardPosition(index) === 'center' 
                 ? '-50%' 
                 : getCardPosition(index) === 'left' 
-                  ? '-85%' 
-                  : '-15%',
+                  ? '-90%' 
+                  : '-10%',
               y: '-50%',
               zIndex: getCardPosition(index) === 'center' ? 2 : 1,
               rotate: getCardPosition(index) === 'center' 
-                ? -3 
+                ? -2
                 : getCardPosition(index) === 'left'
-                  ? -6
+                  ? -4
                   : 0,
             }}
-            transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}
+            transition={{ duration: 0.8, ease: [0.32, 0.72, 0, 1] }}
           >
             <motion.div 
-              className="relative w-[200px] h-[400px] sm:w-[240px] sm:h-[480px] md:w-[280px] md:h-[560px] lg:w-[320px] lg:h-[640px] rounded-[2.5rem] overflow-hidden shadow-2xl"
+              className="relative w-[240px] h-[480px] sm:w-[280px] sm:h-[560px] md:w-[320px] md:h-[640px] lg:w-[360px] lg:h-[720px] rounded-[2.5rem] overflow-hidden shadow-2xl"
               whileHover={{ 
                 y: -5,
                 rotate: 0,
-                transition: { duration: 0.3 }
+                scale: 1.02,
+                transition: { duration: 0.4 }
               }}
-              transition={{ duration: 0.3 }}
+              transition={{ duration: 0.4 }}
             >
               <Image
                 src={category.image}
@@ -137,12 +142,12 @@ function ImageCarousel({ categories, selectedCategory }: ImageCarouselProps) {
                 className="object-cover"
                 priority={getCardPosition(index) === 'center'}
               />
-              <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/80" />
+              <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/90" />
               <div className="absolute bottom-12 left-8 right-8 space-y-4">
                 <h3 className="font-playfair text-white text-2xl md:text-3xl font-medium leading-tight">
                   {category.name}
                 </h3>
-                <p className="font-poppins text-white/90 text-sm md:text-base">
+                <p className="font-poppins text-white/95 text-sm md:text-base leading-relaxed">
                   {category.description}
                 </p>
               </div>
@@ -157,6 +162,7 @@ function ImageCarousel({ categories, selectedCategory }: ImageCarouselProps) {
 function CategoryList({ categories, selectedCategory, onSelectCategory }: CategoryListProps) {
   return (
     <div className="space-y-6">
+
       {categories.map((category, index) => (
         <motion.div
           key={category.id}

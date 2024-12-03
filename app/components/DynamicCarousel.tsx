@@ -34,21 +34,21 @@ const categories: Category[] = [
     id: 1, 
     name: "Valley View Suites",
     description: "Luxurious accommodations with panoramic views of Araku Valley",
-    image: "https://images.unsplash.com/photo-1602002418816-5c0aeef426aa?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1531932594968-e5e5e9dee95a",
     icon: Home
   },
   { 
     id: 2, 
     name: "Wellness Sanctuary",
-    description: "Rejuvenate your mind and body in our eco-spa retreat",
-    image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80",
+    description: "Engage in activities that connect you with nature and local culture.",
+    image: "https://images.unsplash.com/photo-1589923188900-85dae523342b",
     icon: Leaf
   },
   { 
     id: 3, 
     name: "Culinary Journey",
     description: "Experience farm-to-table dining with local organic ingredients",
-    image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1603554593710-89285666b691",
     icon: Coffee
   },
 ]

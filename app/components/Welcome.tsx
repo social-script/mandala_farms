@@ -7,24 +7,24 @@ export default function Welcome() {
       <div className="grid md:grid-cols-2 gap-12 items-center">
         <div>
           <h3 className="font-poppins text-[#E8FF8B] text-sm font-medium tracking-wider mb-4">
-            WELCOME, NEIGHBOR
+          RESTFUL RETREATS
           </h3>
           <h2 className="font-playfair text-white text-4xl md:text-5xl font-medium leading-tight mb-6">
-            Bringing neighbors together for a more comfortable life
+          Experience the Perfect Harmony of Comfort, Style, and Nature in Every Stay
           </h2>
           <p className="font-poppins text-white/80 text-lg leading-relaxed">
-            With neighborhoods you can easily discuss community issues, find out the latest news of your apartment complex, find the opportunity to put to a poll or vote on a project within your apartment complex
+          Immerse yourself in spaces designed to inspire relaxation and rejuvenation. From cozy interiors to breathtaking surroundings, each moment is a seamless blend of tranquility and refined elegance.
           </p>
         </div>
         <div className="relative h-[500px] rounded-3xl overflow-hidden">
           <Image
-            src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00"
+            src="/bedroom.jpg"
             alt="Modern apartment complex"
             fill
             className="object-cover"
           />
           <Button className="absolute bottom-6 right-6 bg-white/90 backdrop-blur-sm text-[#2F4538] hover:bg-white rounded-full font-poppins">
-            About Neighborhood
+          Discover Timeless Charm
             <span className="ml-2">→</span>
           </Button>
         </div>

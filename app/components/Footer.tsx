@@ -40,17 +40,29 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
-          {Array.from({ length: 4 }).map((_, i) => (
-            <div key={i}>
-              <h3 className="text-[#E8FF8B] font-medium mb-4">EXPERIENCES</h3>
-              <ul className="space-y-2">
-                <li><a href="#" className="text-white hover:text-[#E8FF8B] transition-colors">Farm Tours</a></li>
-                <li><a href="#" className="text-white hover:text-[#E8FF8B] transition-colors">Nature Walks</a></li>
-                <li><a href="#" className="text-white hover:text-[#E8FF8B] transition-colors">Local Culture</a></li>
-              </ul>
-            </div>
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-12 mb-16">
+          <div>
+            <h3 className="font-playfair text-[#E8FF8B] text-xl mb-6">Discover</h3>
+            <ul className="space-y-4">
+              <li><a href="#" className="text-white hover:text-[#E8FF8B] transition-colors duration-300 font-poppins">Our Story</a></li>
+              <li><a href="#" className="text-white hover:text-[#E8FF8B] transition-colors duration-300 font-poppins">The Farm</a></li>
+              <li><a href="#" className="text-white hover:text-[#E8FF8B] transition-colors duration-300 font-poppins">Araku Valley</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-playfair text-[#E8FF8B] text-xl mb-6">Experience</h3>
+            <ul className="space-y-4">
+              <li><a href="#" className="text-white hover:text-[#E8FF8B] transition-colors duration-300 font-poppins">Experiences</a></li>
+              <li><a href="#" className="text-white hover:text-[#E8FF8B] transition-colors duration-300 font-poppins">Café & Restaurant</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-playfair text-[#E8FF8B] text-xl mb-6">Stay</h3>
+            <ul className="space-y-4">
+              <li><a href="#" className="text-white hover:text-[#E8FF8B] transition-colors duration-300 font-poppins">The Cottages</a></li>
+              <li><a href="#" className="text-white hover:text-[#E8FF8B] transition-colors duration-300 font-poppins">Tariff</a></li>
+            </ul>
+          </div>
         </div>
 
         <div className="flex flex-col md:flex-row justify-between items-center border-t border-white/10 pt-8">

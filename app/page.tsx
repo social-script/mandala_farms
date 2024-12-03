@@ -6,6 +6,7 @@ import ModernMinimal from "./components/ModernMinimal";
 import CafeRestaurant from "./components/CafeRestaurant";
 import DynamicCarousel from "./components/DynamicCarousel";
 import TravelCarousel from "./components/TravelCarousel";
+import ExclusiveCarousel from "./components/ExclusiveCarousel";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <CafeRestaurant />
       <DynamicCarousel />
       <TravelCarousel />
+      <ExclusiveCarousel />
       <Footer />
     </>
   );

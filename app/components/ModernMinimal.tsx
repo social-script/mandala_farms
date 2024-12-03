@@ -9,7 +9,7 @@ export default function ModernMinimal() {
         {/* Left large card */}
         <div className="col-span-12 lg:col-span-8 relative rounded-[2.5rem] overflow-hidden h-[650px] group">
           <Image
-            src="https://images.unsplash.com/photo-1600585154526-990dced4db0d"
+            src="/bedroom.jpeg"
             alt="Luxury eco-friendly suite at Mandala Farms"
             fill
             className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -18,10 +18,10 @@ export default function ModernMinimal() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/10 to-black/70" />
           <div className="absolute bottom-12 left-12">
             <Badge variant="secondary" className="mb-6 text-base px-8 py-2 border-[1.5px] border-white/30 backdrop-blur-sm text-sm rounded-full">
-              Eco-Luxury Living
+              Eco-Refined Living
             </Badge>
             <h2 className="font-playfair text-white text-5xl md:text-6xl font-medium leading-[1.1]">
-              Eco-Luxury<br />Living Spaces
+              Harmonious<br />Eco-Living Spaces
             </h2>
           </div>
           <button className="absolute top-12 right-12 p-4 bg-white/10 backdrop-blur-sm rounded-full hover:bg-white/20 transition-all">
@@ -35,14 +35,14 @@ export default function ModernMinimal() {
           <div className="relative rounded-[2.5rem] overflow-hidden h-[280px] bg-[#FAF3E0] p-10 group">
             <Badge variant="default" className="bg-white text-black mb-5 text-base px-4 py-1.5 text-sm rounded-full 
                         transition-transform duration-300 hover:scale-105">
-              Aesthetic
+              Café cum Restaurant 
             </Badge>
             <div className="max-w-[85%]">
               <p className="font-poppins text-[#2F4538]/70 text-sm leading-relaxed mb-4">
-              Where luxury meets sustainability in the heart of Araku Valley, creating an unforgettable escape into nature
+              Indulge in farm-fresh cuisine that celebrates the authentic tastes and stories of the land.
               </p>
               <h3 className="font-playfair text-[#2F4538] text-3xl font-medium leading-tight">
-                Into a gallery<br />of elegance
+              Locally Crafted Flavors
               </h3>
             </div>
             <button className="absolute top-10 right-10 p-4 bg-[#2F4538]/5 rounded-full hover:bg-[#2F4538]/10 transition-all">
@@ -53,7 +53,7 @@ export default function ModernMinimal() {
           {/* Bottom card */}
           <div className="relative rounded-[2.5rem] overflow-hidden h-[350px] group">
             <Image
-              src="https://images.unsplash.com/photo-1618220179428-22790b461013"
+              src="/araku_valley.jpeg"
               alt="Sustainable furniture at Mandala Farms"
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -64,10 +64,10 @@ export default function ModernMinimal() {
                 className="bg-white/90 backdrop-blur-sm text-black px-4 py-1.5 text-sm 
                           rounded-full transition-transform duration-300 hover:scale-105"
               >
-                Farm-to-Table
+                Araku Valley
               </Badge>
               <p className="text-lg font-medium text-white">
-                Savor the essence of local flavors in every thoughtfully crafted dish
+              Experience the seamless fusion of sustainable luxury and natural beauty of Araku Valley.
               </p>
             </div>
             <button className="absolute top-10 right-10 p-4 bg-white/10 backdrop-blur-sm rounded-full hover:bg-white/20 transition-all">

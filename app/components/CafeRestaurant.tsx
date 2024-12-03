@@ -19,7 +19,7 @@ export default function CafeRestaurant() {
               />
               <div className="absolute bottom-8 left-8 bg-[#2F4538]/90 backdrop-blur-sm rounded-[1rem] p-6 max-w-[280px]">
                 <p className="font-poppins text-white/90 text-sm leading-relaxed">
-                  &ldquo;A perfect blend of local flavors and stunning views. Don&apos;t miss the sunset from our terrace!&rdquo;
+                  &ldquo;An unforgettable dining experience – indulge in vibrant local flavors as the sun dips below the Araku horizon.&rdquo;
                 </p>
                 <p className="font-poppins text-[#E8FF8B] text-sm mt-2">
                   - Chef&apos;s Recommendation
@@ -33,7 +33,7 @@ export default function CafeRestaurant() {
                   DINING EXPERIENCE
                 </h3>
                 <h2 className="font-playfair text-[#2F4538] text-4xl md:text-5xl font-medium leading-tight">
-                  Experience the Unique Ambiance of Our Café
+                Savor Local Flavors in an Enchanting Setting
                 </h2>
               </div>
               

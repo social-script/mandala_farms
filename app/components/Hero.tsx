@@ -20,14 +20,14 @@ export default function Hero() {
         
         <div className="relative w-full h-[300px] md:h-[320px] lg:h-[380px] xl:h-[420px] rounded-3xl overflow-hidden mb-12">
           <Image
-            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
+            src="/hero_img.jpg"
             alt="Luxury eco farm stay"
             fill
             className="object-cover transition-transform duration-700 hover:scale-105"
             priority
           />
           <Button className="absolute bottom-6 right-6 bg-white/90 backdrop-blur-sm text-[#2F4538] hover:bg-white hover:scale-105 transition-all duration-300 rounded-full font-poppins">
-            About Complex
+            Our Story
             <span className="ml-2">→</span>
           </Button>
         </div>

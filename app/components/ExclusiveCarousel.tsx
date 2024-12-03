@@ -1,0 +1,217 @@
+"use client"
+
+import React, { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import Image from 'next/image'
+
+interface Category {
+  id: number
+  name: string
+  description: string
+  image: string
+}
+
+interface ImageCarouselProps {
+  categories: Category[]
+  selectedCategory: number
+}
+
+interface CategoryListProps {
+  categories: Category[]
+  selectedCategory: number
+  onSelectCategory: (index: number) => void
+}
+
+const categories: Category[] = [
+  { 
+    id: 1, 
+    name: "Cozy Evenings by the Fire",
+    description: "Relax under the stars with a crackling fire, delectable veg or non-veg skewers, and soulful live music to make your evening unforgettable.",
+    image: "https://images.unsplash.com/photo-1493103877408-d878f729f6b9"
+  },
+  { 
+    id: 2, 
+    name: "Pre-Order Curated Dinner",
+    description: "Savor a personalized dining experience with pre-ordered, expertly curated meals tailored to your tastes, crafted from farm-fresh ingredients.",
+    image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0"
+  },
+  { 
+    id: 3, 
+    name: "Coffee Brewing Sessions",
+    description: "Dive into the art of coffee brewing, from bean to cup, in an engaging session that celebrates the flavors of freshly harvested coffee.",
+    image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085"
+  },
+  { 
+    id: 4, 
+    name: "Farm Activities",
+    description: "Engage in meaningful farm activities such as gardening, composting, feeding animals, and learning about permaculture practices that connect you with the land.",
+    image: "https://images.unsplash.com/photo-1621460248083-6271cc4437a8"
+  },
+  { 
+    id: 5, 
+    name: "Guided Trekking Adventures",
+    description: "Explore the stunning landscapes of Araku Valley on guided treks. Discover hidden gems, soak in breathtaking views, and connect with nature like never before.",
+    image: "https://images.unsplash.com/photo-1551632811-561732d1e306"
+  },
+]
+
+export default function ExclusiveCarousel() {
+  const [selectedCategory, setSelectedCategory] = useState(0)
+
+  return (
+    <section className="container mx-auto px-4 py-24">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="relative flex items-center justify-center">
+          <ImageCarousel 
+            categories={categories} 
+            selectedCategory={selectedCategory} 
+          />
+        </div>
+
+        <div className="flex flex-col justify-center bg-[#FAF3E0] rounded-[2.5rem] p-12">
+          <h3 className="font-poppins text-[#2F4538]/70 text-sm font-medium tracking-wider mb-4">
+            EXCLUSIVE EXPERIENCES (AVAILABLE ON REQUEST)
+          </h3>
+          <CategoryList 
+            categories={categories} 
+            selectedCategory={selectedCategory} 
+            onSelectCategory={setSelectedCategory} 
+          />
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function ImageCarousel({ categories, selectedCategory }: ImageCarouselProps) {
+  const getCardPosition = (index: number) => {
+    const diff = (index - selectedCategory + categories.length) % categories.length
+    if (diff === 0) return 'center'
+    if (diff === 1) return 'right'
+    if (diff === categories.length - 1) return 'left'
+    return 'hidden'
+  }
+
+  return (
+    <div className="relative w-full max-w-[1000px] h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px]">
+      <AnimatePresence mode="wait">
+        {categories.map((category, index) => {
+          const position = getCardPosition(index)
+          return (
+            <motion.div
+              key={category.id}
+              className="absolute top-1/2 left-1/2"
+              initial={{ 
+                opacity: 0, 
+                scale: 0.8,
+                x: position === 'right' ? '100%' : position === 'left' ? '-100%' : '-50%'
+              }}
+              animate={{
+                opacity: position === 'hidden' ? 0 : position === 'center' ? 1 : 0.6,
+                scale: position === 'center' ? 1 : 0.9,
+                x: position === 'center' 
+                  ? '-50%' 
+                  : position === 'left' 
+                    ? '-90%' 
+                    : position === 'right'
+                      ? '-10%'
+                      : '-50%',
+                y: '-50%',
+                zIndex: position === 'center' ? 2 : 1,
+                rotate: position === 'center' 
+                  ? -2
+                  : position === 'left'
+                    ? -4
+                    : 0,
+              }}
+              exit={{
+                opacity: 0,
+                scale: 0.8,
+                x: position === 'right' ? '100%' : position === 'left' ? '-100%' : '-50%'
+              }}
+              transition={{ 
+                duration: 0.8, 
+                ease: [0.32, 0.72, 0, 1],
+                opacity: { duration: 0.4 }
+              }}
+            >
+              <motion.div 
+                className="relative w-[240px] h-[480px] sm:w-[280px] sm:h-[560px] md:w-[320px] md:h-[640px] lg:w-[360px] lg:h-[720px] rounded-[2.5rem] overflow-hidden shadow-2xl"
+                whileHover={{ 
+                  y: -5,
+                  rotate: 0,
+                  scale: 1.02,
+                  transition: { duration: 0.4 }
+                }}
+                transition={{ duration: 0.4 }}
+              >
+                <Image
+                  src={category.image}
+                  alt={category.name}
+                  fill
+                  className="object-cover"
+                  priority={position === 'center'}
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/90" />
+                <div className="absolute bottom-12 left-8 right-8 space-y-4">
+                  <h3 className="font-playfair text-white text-2xl md:text-3xl font-medium leading-tight">
+                    {category.name}
+                  </h3>
+                  <p className="font-poppins text-white/95 text-sm md:text-base leading-relaxed">
+                    {category.description}
+                  </p>
+                </div>
+              </motion.div>
+            </motion.div>
+          )
+        })}
+      </AnimatePresence>
+    </div>
+  )
+}
+
+function CategoryList({ categories, selectedCategory, onSelectCategory }: CategoryListProps) {
+  return (
+    <div className="space-y-6">
+
+      {categories.map((category, index) => (
+        <motion.div
+          key={category.id}
+          className="group cursor-pointer"
+          onClick={() => onSelectCategory(index)}
+          initial={false}
+          animate={{ 
+            backgroundColor: index === selectedCategory ? "rgba(47, 69, 56, 0.1)" : "transparent",
+          }}
+          whileHover={{ backgroundColor: "rgba(47, 69, 56, 0.05)" }}
+          transition={{ duration: 0.2 }}
+        >
+          <div className="flex items-center gap-4 p-4 rounded-[1rem]">
+            <div className={`w-1 h-12 rounded-full transition-colors duration-200 ${
+              index === selectedCategory ? "bg-[#2F4538]" : "bg-[#2F4538]/20"
+            }`} />
+            <div>
+              <h3 className={`font-playfair text-xl transition-colors duration-200 ${
+                index === selectedCategory 
+                  ? 'text-[#2F4538] font-medium' 
+                  : 'text-[#2F4538]/70'
+              }`}>
+                {category.name}
+              </h3>
+              {index === selectedCategory && (
+                <motion.p 
+                  className="font-poppins text-sm text-[#2F4538]/70 mt-1 hidden md:block"
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 10 }}
+                >
+                  {category.description}
+                </motion.p>
+              )}
+            </div>
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  )
+} 
