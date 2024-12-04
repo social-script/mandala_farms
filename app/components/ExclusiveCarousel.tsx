@@ -59,8 +59,8 @@ export default function ExclusiveCarousel() {
   const [selectedCategory, setSelectedCategory] = useState(0)
 
   return (
-    <section className="container mx-auto px-4 py-24">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <section className="container mx-auto px-4 py-12 md:py-24">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
         <div className="relative flex items-center justify-center">
           <ImageCarousel 
             categories={categories} 
@@ -68,8 +68,8 @@ export default function ExclusiveCarousel() {
           />
         </div>
 
-        <div className="flex flex-col justify-center bg-[#FAF3E0] rounded-[2.5rem] p-12">
-          <h3 className="font-poppins text-[#2F4538]/70 text-sm font-medium tracking-wider mb-4">
+        <div className="flex flex-col justify-center bg-[#FAF3E0] rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-8 lg:p-12">
+          <h3 className="font-poppins text-[#2F4538]/70 text-xs md:text-sm font-medium tracking-wider mb-3 md:mb-4">
             EXCLUSIVE EXPERIENCES (AVAILABLE ON REQUEST)
           </h3>
           <CategoryList 
@@ -93,7 +93,7 @@ function ImageCarousel({ categories, selectedCategory }: ImageCarouselProps) {
   }
 
   return (
-    <div className="relative w-full max-w-[1000px] h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px]">
+    <div className="relative w-full max-w-[400px] md:max-w-[600px] lg:max-w-[1000px] h-[280px] sm:h-[350px] md:h-[450px] lg:h-[600px]">
       <AnimatePresence mode="wait">
         {categories.map((category, index) => {
           const position = getCardPosition(index)
@@ -108,14 +108,12 @@ function ImageCarousel({ categories, selectedCategory }: ImageCarouselProps) {
               }}
               animate={{
                 opacity: position === 'hidden' ? 0 : position === 'center' ? 1 : 0.6,
-                scale: position === 'center' ? 1 : 0.9,
+                scale: position === 'center' ? 1 : 0.85,
                 x: position === 'center' 
                   ? '-50%' 
                   : position === 'left' 
-                    ? '-90%' 
-                    : position === 'right'
-                      ? '-10%'
-                      : '-50%',
+                    ? '-85%' 
+                    : '-15%',
                 y: '-50%',
                 zIndex: position === 'center' ? 2 : 1,
                 rotate: position === 'center' 
@@ -136,7 +134,7 @@ function ImageCarousel({ categories, selectedCategory }: ImageCarouselProps) {
               }}
             >
               <motion.div 
-                className="relative w-[240px] h-[480px] sm:w-[280px] sm:h-[560px] md:w-[320px] md:h-[640px] lg:w-[360px] lg:h-[720px] rounded-[2.5rem] overflow-hidden shadow-2xl"
+                className="relative w-[160px] h-[320px] sm:w-[200px] sm:h-[400px] md:w-[280px] md:h-[560px] lg:w-[360px] lg:h-[720px] rounded-[2rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl"
                 whileHover={{ 
                   y: -5,
                   rotate: 0,
@@ -153,11 +151,11 @@ function ImageCarousel({ categories, selectedCategory }: ImageCarouselProps) {
                   priority={position === 'center'}
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/90" />
-                <div className="absolute bottom-12 left-8 right-8 space-y-4">
-                  <h3 className="font-playfair text-white text-2xl md:text-3xl font-medium leading-tight">
+                <div className="absolute bottom-6 md:bottom-12 left-4 md:left-8 right-4 md:right-8 space-y-2 md:space-y-4">
+                  <h3 className="font-playfair text-white text-lg md:text-2xl lg:text-3xl font-medium leading-tight">
                     {category.name}
                   </h3>
-                  <p className="font-poppins text-white/95 text-sm md:text-base leading-relaxed">
+                  <p className="font-poppins text-white/95 text-xs md:text-sm lg:text-base leading-relaxed">
                     {category.description}
                   </p>
                 </div>
@@ -172,8 +170,7 @@ function ImageCarousel({ categories, selectedCategory }: ImageCarouselProps) {
 
 function CategoryList({ categories, selectedCategory, onSelectCategory }: CategoryListProps) {
   return (
-    <div className="space-y-6">
-
+    <div className="space-y-4 md:space-y-6">
       {categories.map((category, index) => (
         <motion.div
           key={category.id}
@@ -186,12 +183,12 @@ function CategoryList({ categories, selectedCategory, onSelectCategory }: Catego
           whileHover={{ backgroundColor: "rgba(47, 69, 56, 0.05)" }}
           transition={{ duration: 0.2 }}
         >
-          <div className="flex items-center gap-4 p-4 rounded-[1rem]">
-            <div className={`w-1 h-12 rounded-full transition-colors duration-200 ${
+          <div className="flex items-center gap-3 md:gap-4 p-3 md:p-4 rounded-[1rem]">
+            <div className={`w-1 h-8 md:h-12 rounded-full transition-colors duration-200 ${
               index === selectedCategory ? "bg-[#2F4538]" : "bg-[#2F4538]/20"
             }`} />
             <div>
-              <h3 className={`font-playfair text-xl transition-colors duration-200 ${
+              <h3 className={`font-playfair text-base md:text-xl transition-colors duration-200 ${
                 index === selectedCategory 
                   ? 'text-[#2F4538] font-medium' 
                   : 'text-[#2F4538]/70'
@@ -200,7 +197,7 @@ function CategoryList({ categories, selectedCategory, onSelectCategory }: Catego
               </h3>
               {index === selectedCategory && (
                 <motion.p 
-                  className="font-poppins text-sm text-[#2F4538]/70 mt-1 hidden md:block"
+                  className="font-poppins text-xs md:text-sm text-[#2F4538]/70 mt-1 hidden md:block"
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 10 }}

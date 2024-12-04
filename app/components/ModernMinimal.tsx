@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react"
 
 export default function ModernMinimal() {
   return (
-    <section className="container mx-auto px-4 py-24">
+    <section className="container mx-auto px-4 py-20">
       <div className="grid grid-cols-12 gap-8">
         {/* Left large card */}
         <div className="col-span-12 lg:col-span-8 relative rounded-[2.5rem] overflow-hidden h-[650px] group">
