@@ -78,7 +78,7 @@ export default function DynamicCarousel() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Discover Serenity in Nature's Embrace
+            Discover Serenity in Nature&apos;s Embrace
           </motion.h2>
           <motion.p 
             className="font-poppins text-white/80 text-sm md:text-lg leading-relaxed mb-8 md:mb-12"
