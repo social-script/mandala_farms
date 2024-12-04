@@ -49,8 +49,8 @@ export default function TravelCarousel() {
   const [selectedCategory, setSelectedCategory] = useState(0)
 
   return (
-    <section className="container mx-auto px-4 py-12 md:py-24">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center ">
+    <section className="container mx-auto px-4 py-8 md:py-24">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16 items-center">
         <div className="relative flex items-center justify-center">
           <ImageCarousel 
             categories={categories} 
@@ -58,12 +58,12 @@ export default function TravelCarousel() {
           />
         </div>
 
-        <div className="flex flex-col justify-center bg-[#FAF3E0] rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-8 lg:p-12 mt-8 md:mt-0">
-          <h3 className="font-poppins text-[#2F4538]/70 text-xs md:text-sm font-medium tracking-wider mb-3 md:mb-4">
+        <div className="flex flex-col justify-center bg-[#FAF3E0] rounded-[2rem] md:rounded-[2.5rem] p-4 md:p-8 lg:p-12">
+          <h3 className="font-poppins text-[#2F4538]/70 text-xs md:text-sm font-medium tracking-wider mb-2 md:mb-4">
             DISCOVER ARAKU
           </h3>
           <motion.h2 
-            className="font-playfair text-[#2F4538] text-2xl md:text-4xl lg:text-5xl font-medium leading-tight mb-4 md:mb-6"
+            className="font-playfair text-[#2F4538] text-2xl md:text-4xl lg:text-5xl font-medium leading-tight mb-3 md:mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -71,12 +71,12 @@ export default function TravelCarousel() {
             Experience the Magic of Nature
           </motion.h2>
           <motion.p 
-            className="font-poppins text-[#2F4538]/80 text-sm md:text-lg leading-relaxed mb-8 md:mb-12"
+            className="font-poppins text-[#2F4538]/80 text-sm md:text-lg leading-relaxed mb-6 md:mb-12 "
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            At our farm, every moment is a celebration of nature&apos;s beauty and the joy of animal companionship. Embrace a lifestyle that nurtures both your spirit and the environment around you.
+            At our farm, every moment is a celebration of nature&apos;s beauty and the joy of animal companionship.
           </motion.p>
           <CategoryList 
             categories={categories} 
@@ -98,7 +98,7 @@ function ImageCarousel({ categories, selectedCategory }: ImageCarouselProps) {
   }
 
   return (
-    <div className="relative w-full max-w-[400px] md:max-w-[600px] h-[280px] sm:h-[350px] md:h-[450px] lg:h-[600px]">
+    <div className="relative w-full max-w-[400px] md:max-w-[600px] h-[240px] sm:h-[350px] md:h-[450px] lg:h-[600px]">
       <AnimatePresence initial={false}>
         {categories.map((category, index) => (
           <motion.div
@@ -107,7 +107,7 @@ function ImageCarousel({ categories, selectedCategory }: ImageCarouselProps) {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{
               opacity: getCardPosition(index) === 'center' ? 1 : 0.3,
-              scale: getCardPosition(index) === 'center' ? 1 : 0.85,
+              scale: getCardPosition(index) === 'center' ? 1 : 0.75,
               x: getCardPosition(index) === 'center' 
                 ? '-50%' 
                 : getCardPosition(index) === 'left' 
@@ -124,7 +124,7 @@ function ImageCarousel({ categories, selectedCategory }: ImageCarouselProps) {
             transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}
           >
             <motion.div 
-              className="relative w-[160px] h-[320px] sm:w-[200px] sm:h-[400px] md:w-[240px] md:h-[480px] lg:w-[280px] lg:h-[560px] rounded-[2rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl"
+              className="relative w-[120px] h-[240px] sm:w-[160px] sm:h-[320px] md:w-[240px] md:h-[480px] lg:w-[280px] lg:h-[560px] rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl"
               whileHover={{ 
                 y: -5,
                 rotate: 0,
@@ -140,11 +140,11 @@ function ImageCarousel({ categories, selectedCategory }: ImageCarouselProps) {
                 priority={getCardPosition(index) === 'center'}
               />
               <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/80" />
-              <div className="absolute bottom-6 md:bottom-12 left-4 md:left-8 right-4 md:right-8 space-y-2 md:space-y-4">
-                <h3 className="font-playfair text-white text-lg md:text-2xl lg:text-3xl font-medium leading-tight">
+              <div className="absolute bottom-4 md:bottom-12 left-3 md:left-8 right-3 md:right-8 space-y-1.5 md:space-y-4">
+                <h3 className="font-playfair text-white text-base md:text-2xl lg:text-3xl font-medium leading-tight">
                   {category.name}
                 </h3>
-                <p className="font-poppins text-white/90 text-xs md:text-sm lg:text-base">
+                <p className="font-poppins text-white/90 text-xs md:text-sm lg:text-base hidden md:block">
                   {category.description}
                 </p>
               </div>
@@ -158,7 +158,7 @@ function ImageCarousel({ categories, selectedCategory }: ImageCarouselProps) {
 
 function CategoryList({ categories, selectedCategory, onSelectCategory }: CategoryListProps) {
   return (
-    <div className="space-y-4 md:space-y-6">
+    <div className="space-y-2.5 md:space-y-6">
       {categories.map((category, index) => (
         <motion.div
           key={category.id}
@@ -171,12 +171,12 @@ function CategoryList({ categories, selectedCategory, onSelectCategory }: Catego
           whileHover={{ backgroundColor: "rgba(47, 69, 56, 0.05)" }}
           transition={{ duration: 0.2 }}
         >
-          <div className="flex items-center gap-3 md:gap-4 p-3 md:p-4 rounded-[1rem]">
-            <div className={`w-1 h-8 md:h-12 rounded-full transition-colors duration-200 ${
+          <div className="flex items-center gap-2 md:gap-4 p-2 md:p-4 rounded-[1rem]">
+            <div className={`w-1 h-6 md:h-12 rounded-full transition-colors duration-200 ${
               index === selectedCategory ? "bg-[#2F4538]" : "bg-[#2F4538]/20"
             }`} />
             <div>
-              <h3 className={`font-playfair text-base md:text-xl transition-colors duration-200 ${
+              <h3 className={`font-playfair text-sm md:text-xl transition-colors duration-200 ${
                 index === selectedCategory 
                   ? 'text-[#2F4538] font-medium' 
                   : 'text-[#2F4538]/70'
@@ -185,7 +185,7 @@ function CategoryList({ categories, selectedCategory, onSelectCategory }: Catego
               </h3>
               {index === selectedCategory && (
                 <motion.p 
-                  className="font-poppins text-xs md:text-sm text-[#2F4538]/70 mt-1 hidden md:block"
+                  className="font-poppins text-xs md:text-sm text-[#2F4538]/70 mt-1 "
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 10 }}
