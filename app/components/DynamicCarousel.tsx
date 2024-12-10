@@ -23,11 +23,11 @@ interface ImageCarouselProps {
 //   onPrev: () => void
 // }
 
-interface CategoryListProps {
-  categories: Category[]
-  selectedCategory: number
-  onSelectCategory: (index: number) => void
-}
+// interface CategoryListProps {
+//   categories: Category[]
+//   selectedCategory: number
+//   onSelectCategory: (index: number) => void
+// }
 
 const categories: Category[] = [
   { 
