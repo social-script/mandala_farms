@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 interface Category {
   id: number
@@ -48,22 +49,56 @@ const categories: Category[] = [
 export default function TravelCarousel() {
   const [selectedCategory, setSelectedCategory] = useState(0)
 
+  const handleNext = (e: React.MouseEvent) => {
+    e.stopPropagation()
+    setSelectedCategory((prev) => (prev + 1) % categories.length)
+  }
+
+  const handlePrev = (e: React.MouseEvent) => {
+    e.stopPropagation()
+    setSelectedCategory((prev) => (prev - 1 + categories.length) % categories.length)
+  }
+
   return (
-    <section className="container mx-auto px-4 py-8 md:py-24">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16 items-center">
-        <div className="relative flex items-center justify-center">
-          <ImageCarousel 
-            categories={categories} 
-            selectedCategory={selectedCategory} 
-          />
+    <section className="container mx-auto px-4 py-10 md:py-20">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
+        <div className="relative">
+          <div className="relative flex items-center justify-center">
+            <ImageCarousel 
+              categories={categories} 
+              selectedCategory={selectedCategory} 
+            />
+          </div>
+
+          {/* Navigation Arrows - Updated colors */}
+          <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex justify-between z-10 px-2 md:px-4">
+            <button 
+              onClick={handlePrev}
+              className="p-2 md:p-3 rounded-full bg-white/90 backdrop-blur-sm text-[#2F4538]
+                       hover:bg-white transition-all duration-300
+                       shadow-lg hover:scale-105 active:scale-95"
+              aria-label="Previous slide"
+            >
+              <ChevronLeft className="w-4 h-4 md:w-5 md:h-5" />
+            </button>
+            <button 
+              onClick={handleNext}
+              className="p-2 md:p-3 rounded-full bg-white/90 backdrop-blur-sm text-[#2F4538]
+                       hover:bg-white transition-all duration-300
+                       shadow-lg hover:scale-105 active:scale-95"
+              aria-label="Next slide"
+            >
+              <ChevronRight className="w-4 h-4 md:w-5 md:h-5" />
+            </button>
+          </div>
         </div>
 
-        <div className="flex flex-col justify-center bg-[#FAF3E0] rounded-[2rem] md:rounded-[2.5rem] p-4 md:p-8 lg:p-12">
+        <div className="flex flex-col justify-center bg-[#FAF3E0] rounded-[2rem] md:rounded-[2.5rem] p-5 md:p-8 lg:p-10">
           <h3 className="font-poppins text-[#2F4538]/70 text-xs md:text-sm font-medium tracking-wider mb-2 md:mb-4">
             DISCOVER ARAKU
           </h3>
           <motion.h2 
-            className="font-playfair text-[#2F4538] text-2xl md:text-4xl lg:text-5xl font-medium leading-tight mb-3 md:mb-6"
+            className="font-playfair text-[#2F4538] text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium leading-tight mb-3 md:mb-5"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -71,7 +106,7 @@ export default function TravelCarousel() {
             Experience the Magic of Nature
           </motion.h2>
           <motion.p 
-            className="font-poppins text-[#2F4538]/80 text-sm md:text-lg leading-relaxed mb-6 md:mb-12 "
+            className="font-poppins text-[#2F4538]/80 text-sm md:text-lg leading-relaxed mb-5 md:mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}

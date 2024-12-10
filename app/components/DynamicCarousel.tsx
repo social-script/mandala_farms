@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Leaf, Home, Coffee, LucideIcon } from 'lucide-react'
+import { Leaf, Home, Coffee, LucideIcon, ChevronLeft, ChevronRight } from 'lucide-react'
 import Image from 'next/image'
 
 interface Category {
@@ -56,24 +56,58 @@ const categories: Category[] = [
 export default function DynamicCarousel() {
   const [selectedCategory, setSelectedCategory] = useState(0)
 
+  const handleNext = (e: React.MouseEvent) => {
+    e.stopPropagation()
+    setSelectedCategory((prev) => (prev + 1) % categories.length)
+  }
+
+  const handlePrev = (e: React.MouseEvent) => {
+    e.stopPropagation()
+    setSelectedCategory((prev) => (prev - 1 + categories.length) % categories.length)
+  }
+
   return (
-    <section className="container mx-auto px-4 py-12 md:py-24">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+    <section className="container mx-auto px-4 py-10 md:py-20">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
         {/* Left Column - Carousel */}
-        <div className="relative flex items-center justify-center">
-          <ImageCarousel 
-            categories={categories} 
-            selectedCategory={selectedCategory} 
-          />
+        <div className="relative">
+          <div className="relative h-[280px] sm:h-[350px] md:h-[400px] flex items-center justify-center">
+            <ImageCarousel 
+              categories={categories} 
+              selectedCategory={selectedCategory} 
+            />
+          </div>
+          
+          {/* Navigation Arrows */}
+          <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex justify-between z-10 px-2 md:px-4">
+            <button 
+              onClick={handlePrev}
+              className="p-2 md:p-3 rounded-full bg-white/90 backdrop-blur-sm text-[#2F4538] 
+                       hover:bg-white transition-all duration-300
+                       shadow-lg hover:scale-105 active:scale-95"
+              aria-label="Previous slide"
+            >
+              <ChevronLeft className="w-4 h-4 md:w-5 md:h-5" />
+            </button>
+            <button 
+              onClick={handleNext}
+              className="p-2 md:p-3 rounded-full bg-white/90 backdrop-blur-sm text-[#2F4538] 
+                       hover:bg-white transition-all duration-300
+                       shadow-lg hover:scale-105 active:scale-95"
+              aria-label="Next slide"
+            >
+              <ChevronRight className="w-4 h-4 md:w-5 md:h-5" />
+            </button>
+          </div>
         </div>
 
         {/* Right Column - Content */}
-        <div className="flex flex-col justify-center bg-[#2F4538] rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-8 lg:p-12">
-          <h3 className="font-poppins text-white/70 text-xs md:text-sm font-medium tracking-wider mb-3 md:mb-4">
+        <div className="flex flex-col justify-center bg-[#2F4538] rounded-[2rem] md:rounded-[2.5rem] p-5 md:p-8 lg:p-10">
+          <h3 className="font-poppins text-white/70 text-xs md:text-sm font-medium tracking-wider mb-2 md:mb-4">
             LUXURY EXPERIENCES
           </h3>
           <motion.h2 
-            className="font-playfair text-white text-2xl md:text-4xl lg:text-5xl font-medium leading-tight mb-4 md:mb-6"
+            className="font-playfair text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium leading-tight mb-3 md:mb-5"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -81,18 +115,48 @@ export default function DynamicCarousel() {
             Discover Serenity in Nature&apos;s Embrace
           </motion.h2>
           <motion.p 
-            className="font-poppins text-white/80 text-sm md:text-lg leading-relaxed mb-8 md:mb-12"
+            className="font-poppins text-white/80 text-sm md:text-lg leading-relaxed mb-5 md:mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             Indulge in a harmonious blend of luxury and sustainability, where every moment is crafted to create unforgettable memories.
           </motion.p>
-          <CategoryList 
-            categories={categories} 
-            selectedCategory={selectedCategory} 
-            onSelectCategory={setSelectedCategory} 
-          />
+          
+          {/* Category List */}
+          <div className="space-y-2.5 md:space-y-3">
+            {categories.map((category, index) => (
+              <motion.div
+                key={category.id}
+                className={`relative flex items-center gap-3 md:gap-4 p-3 md:p-4 rounded-xl cursor-pointer
+                          transition-all duration-300 hover:bg-white/5
+                          ${selectedCategory === index ? 'bg-white/10' : ''}`}
+                onClick={() => setSelectedCategory(index)}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <div className="p-2 md:p-2.5 bg-white/10 rounded-full">
+                  {React.createElement(category.icon, { 
+                    className: "w-4 h-4 md:w-5 md:h-5 text-white/70" 
+                  })}
+                </div>
+                <div>
+                  <h3 className="font-playfair text-white text-base md:text-lg font-medium mb-0.5">
+                    {category.name}
+                  </h3>
+                  <p className="font-poppins text-white/70 text-xs md:text-sm leading-relaxed">
+                    {category.description}
+                  </p>
+                </div>
+                {selectedCategory === index && (
+                  <motion.div 
+                    className="absolute right-3 md:right-4 w-1 md:w-1.5 h-8 md:h-10 bg-[#E8FF8B] rounded-full"
+                    layoutId="categoryIndicator"
+                  />
+                )}
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -158,51 +222,6 @@ function ImageCarousel({ categories, selectedCategory }: ImageCarouselProps) {
           </motion.div>
         ))}
       </AnimatePresence>
-    </div>
-  )
-}
-
-function CategoryList({ categories, selectedCategory, onSelectCategory }: CategoryListProps) {
-  return (
-    <div className="space-y-4 md:space-y-6">
-      {categories.map((category, index) => (
-        <motion.div
-          key={category.id}
-          className="group cursor-pointer"
-          onClick={() => onSelectCategory(index)}
-          initial={false}
-          animate={{ 
-            backgroundColor: index === selectedCategory ? "rgba(255, 255, 255, 0.1)" : "transparent",
-          }}
-          whileHover={{ backgroundColor: "rgba(255, 255, 255, 0.05)" }}
-          transition={{ duration: 0.2 }}
-        >
-          <div className="flex items-center gap-3 md:gap-4 p-3 md:p-4 rounded-[1rem]">
-            <div className={`w-1 h-8 md:h-12 rounded-full transition-colors duration-200 ${
-              index === selectedCategory ? "bg-[#E8FF8B]" : "bg-white/20"
-            }`} />
-            <div>
-              <h3 className={`font-playfair text-base md:text-xl transition-colors duration-200 ${
-                index === selectedCategory 
-                  ? 'text-white font-medium' 
-                  : 'text-white/70'
-              }`}>
-                {category.name}
-              </h3>
-              {index === selectedCategory && (
-                <motion.p 
-                  className="font-poppins text-xs md:text-sm text-white/70 mt-1 hidden md:block"
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 10 }}
-                >
-                  {category.description}
-                </motion.p>
-              )}
-            </div>
-          </div>
-        </motion.div>
-      ))}
     </div>
   )
 } 
