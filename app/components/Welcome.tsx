@@ -1,33 +1,71 @@
 import Image from 'next/image'
 import { Button } from "@/components/ui/button"
+import { ArrowRight } from 'lucide-react'
 
-export default function Welcome() {
+interface WelcomeProps {
+  badge: string;
+  title: string;
+  description: string;
+  buttonText: string;
+  imageSrc: string;
+  imageAlt: string;
+  theme?: 'light' | 'dark'
+}
+
+export default function Welcome({
+  badge,
+  title,
+  description,
+  buttonText,
+  imageSrc,
+  imageAlt,
+  theme = 'dark'
+}: WelcomeProps) {
+  const styles = {
+    light: {
+      badge: 'bg-[#2F4538]/10 text-[#2F4538]',
+      title: 'text-[#2F4538]',
+      description: 'text-[#2F4538]/80',
+      button: 'bg-[#2F4538] text-white hover:bg-[#2F4538]/90',
+    },
+    dark: {
+      badge: 'bg-white/10 text-[#E8FF8B]',
+      title: 'text-white',
+      description: 'text-white/80',
+      button: 'bg-white/90 backdrop-blur-sm text-[#2F4538] hover:bg-white',
+    }
+  }
+
+  const currentStyle = styles[theme]
+
   return (
     <section className="container mx-auto px-4 py-12 md:py-20">
       <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-        <div>
-          <h3 className="font-poppins text-[#E8FF8B] text-xs md:text-sm font-medium tracking-wider mb-3 md:mb-4">
-            RESTFUL RETREATS
-          </h3>
-          <h2 className="font-playfair text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium leading-tight mb-4 md:mb-6">
-            Experience the Perfect Harmony of Comfort, Style, and Nature in Every Stay
+        <div className="space-y-6">
+          <div className={`inline-block rounded-lg px-3 py-1.5 text-sm font-poppins font-medium tracking-wider ${currentStyle.badge}`}>
+            {badge}
+          </div>
+          <h2 className={`font-playfair ${currentStyle.title} text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium leading-tight`}>
+            {title}
           </h2>
-          <p className="font-poppins text-white/80 text-sm md:text-lg leading-relaxed">
-            Immerse yourself in spaces designed to inspire relaxation and rejuvenation. From cozy interiors to breathtaking surroundings, each moment is a seamless blend of tranquility and refined elegance.
+          <p className={`font-poppins ${currentStyle.description} text-sm md:text-lg leading-relaxed`}>
+            {description}
           </p>
-        </div>
-        <div className="relative h-[300px] sm:h-[400px] md:h-[500px] rounded-[2rem] md:rounded-[2.5rem] overflow-hidden">
-          <Image
-            src="/bedroom.jpg"
-            alt="Modern apartment complex"
-            fill
-            className="object-cover"
-          />
-          <Button className="absolute bottom-4 md:bottom-6 right-4 md:right-6 bg-white/90 backdrop-blur-sm text-[#2F4538] 
-                           hover:bg-white rounded-full font-poppins text-sm md:text-base px-4 md:px-6 py-2 md:py-2.5">
-            Discover Timeless Charm
-            <span className="ml-2">→</span>
+          <Button 
+            className={`rounded-full font-poppins text-sm md:text-base px-4 md:px-6 py-2 md:py-2.5 ${currentStyle.button}`}
+          >
+            {buttonText}
+            <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
+        </div>
+        <div className="relative h-[300px] sm:h-[400px] md:h-[500px] rounded-[2rem] md:rounded-[2.5rem] overflow-hidden group">
+          <Image
+            src={imageSrc}
+            alt={imageAlt}
+            fill
+            className="object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/10 to-black/70" />
         </div>
       </div>
     </section>
