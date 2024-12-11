@@ -1,8 +1,6 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { Button } from '@/components/ui/button'
-import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
 
 interface TimelineEntry {
@@ -70,7 +68,7 @@ export default function TimelineSection() {
       if (timelineContentRef.current) {
         const { top, height } = timelineContentRef.current.getBoundingClientRect()
         const windowHeight = window.innerHeight
-        const scrollPosition = window.scrollY
+        // const scrollPosition = window.scrollY
         
         if (top <= windowHeight && top + height > 0) {
           const scrollPercentage = (windowHeight - top) / (windowHeight + height)
