@@ -33,10 +33,11 @@ export default function Navbar() {
               Café & Restaurant
             </Link>
           </nav>
-          
-          <Button className="bg-[#E8FF8B] text-[#2F4538] hover:bg-[#d4eb7d] rounded-full px-6 font-poppins">
-            Contact Us
-          </Button>
+          <Link href="/contact-us">
+            <Button className="bg-[#E8FF8B] text-[#2F4538] hover:bg-[#d4eb7d] rounded-full px-6 font-poppins">
+              Contact Us
+            </Button>
+          </Link>
         </div>
       </div>
     </header>

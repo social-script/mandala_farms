@@ -7,6 +7,7 @@ import CafeRestaurant from "./components/CafeRestaurant";
 import DynamicCarousel from "./components/DynamicCarousel";
 import TravelCarousel from "./components/TravelCarousel";
 import ExclusiveCarousel from "./components/ExclusiveCarousel";
+import TestimonialSection from "./components/TestimonialSection";
 
 export default function Home() {
   return (
@@ -26,6 +27,9 @@ export default function Home() {
       <DynamicCarousel />
       <TravelCarousel />
       <ExclusiveCarousel />
+      <div className="bg-[#FAF3E0]">
+        <TestimonialSection theme="light" />
+      </div>
       <Footer />
     </>
   );

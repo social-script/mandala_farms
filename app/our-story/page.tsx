@@ -11,9 +11,13 @@ export default function OurStoryPage() {
   return (
     <div className="bg-gradient-to-b from-[#2F4538] to-[#243A2D]">
       <Navbar />
-      <StoryHeader />
+      <StoryHeader 
+        badge="OUR JOURNEY"
+        title="Our Inspiring Journey"
+        description="Discover how Rajeev and Pratiksha transformed their dreams into a thriving eco-friendly paradise."
+      />
       <VideoSection />
-      <div className="bg-[#FAF3E0]">
+      <div className="bg-[#2F4538]">
         <Welcome 
           badge="TRADITIONAL CRAFTSMANSHIP"
           title="Crafting Our Mud House: A Journey with Local Artisans and Tradition"
@@ -21,7 +25,7 @@ export default function OurStoryPage() {
           buttonText="Explore Our Process"
           imageSrc="https://images.unsplash.com/photo-1661332632427-83e4f7cd5d31"
           imageAlt="Traditional mud house crafted by local artisans"
-          theme="light"
+
         />
       </div>
       <div className="bg-[#2F4538]">
