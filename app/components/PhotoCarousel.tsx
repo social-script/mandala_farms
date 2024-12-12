@@ -5,7 +5,6 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowLeft, ArrowRight, ChevronRight } from 'lucide-react'
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
-import { Button } from "@/components/ui/button"
 
 const photos = [
   {

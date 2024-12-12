@@ -1,6 +1,6 @@
 'use client'
 
-import { Button } from "@/components/ui/button"
+
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import Image from "next/image"
 import { useState, useEffect, useCallback } from "react"
@@ -203,7 +203,7 @@ export default function TestimonialSection({ theme = 'dark' }: TestimonialSectio
                           "font-playfair text-xl md:text-2xl lg:text-3xl font-medium leading-relaxed",
                           theme === 'light' ? 'text-[#2F4538]' : 'text-white'
                         )}>
-                          "{testimonial.quote}"
+                          &ldquo;{testimonial.quote}&rdquo;
                         </blockquote>
                       </div>
                       <div className="space-y-2">
