@@ -55,7 +55,7 @@ export default function VideoSection() {
             onEnded={() => setIsPlaying(false)}
           >
             <source
-              src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+              src="/mandala_video.mp4"
               type="video/mp4"
             />
             Your browser does not support the video tag.

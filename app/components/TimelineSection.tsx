@@ -15,25 +15,25 @@ const timelineData: TimelineEntry[] = [
     date: "2019",
     heading: "Our Arrival",
     description: "In 2020, we embraced a new life in Araku Valley, starting our journey in a tent.",
-    imageUrl: "https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8",
+    imageUrl: "/testimonial1.jpg",
   },
   {
     date: "2020",
     heading: "Building Dreams",
     description: "With the help of local artisans, we built our dream mud house, blending tradition and comfort.",
-    imageUrl: "https://images.unsplash.com/photo-1466637574441-749b8f19452f",
+    imageUrl: "/testimonial2.jpg",
   },
   {
     date: "2022",
     heading: "Farm Transformation",
     description: "What was once barren land is now a vibrant farm, filled with life and beauty.",
-    imageUrl: "https://images.unsplash.com/photo-1545205597-3d9d02c29597",
+    imageUrl: "/testimonial3.jpg",
   },
   {
     date: "2024",
     heading: "Community Growth",
     description: "Today, our farm thrives as a community hub, offering unique experiences and sustainable living.",
-    imageUrl: "https://images.unsplash.com/photo-1604881991720-f91add269bed",
+    imageUrl: "/testimonial4.jpg",
   }
 ]
 

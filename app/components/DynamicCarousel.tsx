@@ -172,7 +172,7 @@ function ImageCarousel({ categories, selectedCategory }: ImageCarouselProps) {
   }
 
   return (
-    <div className="relative w-full max-w-[400px] md:max-w-[600px] h-[280px] sm:h-[350px] md:h-[450px] lg:h-[600px]">
+    <div className="relative w-full max-w-[400px] md:max-w-[600px] h-[280px] sm:h-[350px] md:h-[450px] lg:h-[700px]">
       <AnimatePresence initial={false}>
         {categories.map((category, index) => (
           <motion.div

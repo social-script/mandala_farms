@@ -6,6 +6,7 @@ import Welcome from '../components/Welcome'
 import WelcomeWithSubheadings from '../components/WelcomeWithSubheadings'
 import ImageGallery from '../components/ImageGallery'
 import TestimonialSection from '../components/TestimonialSection'
+import PhotoCarousel from '../components/PhotoCarousel'
 
 export default function TheCottagesPage() {
   return (
@@ -16,7 +17,7 @@ export default function TheCottagesPage() {
       title="Eco-Luxury Retreats"
       description="Experience the perfect blend of sustainable living and modern comfort in our thoughtfully designed eco-cottages."
     />
-<div className="bg-[#2F4538]">
+<div className="bg-[#FAF3E0]">
         <Welcome 
           badge="MINDFUL DESIGN"
           title="Where Luxury Meets Sustainability"
@@ -24,6 +25,7 @@ export default function TheCottagesPage() {
           buttonText="Explore Our Cottages"
           imageSrc="https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8"
           imageAlt="Interior of eco-luxury cottage"
+          theme="light"
         />
       </div>
       <div className="bg-[#2F4538]">
@@ -61,7 +63,9 @@ export default function TheCottagesPage() {
           theme="light"
         />
       </div>
-      <ImageGallery />
+      <div className="bg-[#2F4538]">
+        <PhotoCarousel />
+      </div>
       <div className="bg-[#FAF3E0]">
         <TestimonialSection theme="light" />
       </div>

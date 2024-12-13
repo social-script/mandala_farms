@@ -12,7 +12,7 @@ const photos = [
     alt: "Scenic mountain views at sunrise"
   },
   {
-    src: "https://images.unsplash.com/photo-1622624671653-2c238c84a386",
+    src: "https://images.unsplash.com/photo-1553509990-7686c6f0fae1",
     alt: "Traditional mud house interior"
   },
   {

@@ -185,7 +185,7 @@ export default function TestimonialSection({ theme = 'dark' }: TestimonialSectio
                   transition={{ duration: 0.5 }}
                 >
                   <div className="relative h-full">
-                    <div className="absolute inset-0 bg-[url('/grain.png')] opacity-30 mix-blend-overlay" />
+                    <div className="absolute inset-0 bg-[url('/pinwheel.png')] opacity-30 mix-blend-overlay" />
                     <div className="absolute inset-0 p-6 md:p-10 flex flex-col justify-between">
                       <div className="space-y-6 md:space-y-8">
                         <div className="relative w-16 h-16 md:w-20 md:h-20">

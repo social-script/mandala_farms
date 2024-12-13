@@ -5,10 +5,10 @@ import Welcome from "./components/Welcome";
 import ModernMinimal from "./components/ModernMinimal";
 import CafeRestaurant from "./components/CafeRestaurant";
 import DynamicCarousel from "./components/DynamicCarousel";
-import TravelCarousel from "./components/TravelCarousel";
 import ExclusiveCarousel from "./components/ExclusiveCarousel";
 import TestimonialSection from "./components/TestimonialSection";
-
+import SocialMedia from "./components/SocialMedia";
+import InstagramFeed from "./components/InstagramFeed";
 export default function Home() {
   return (
     <>
@@ -25,11 +25,11 @@ export default function Home() {
       />
       <CafeRestaurant />
       <DynamicCarousel />
-      <TravelCarousel />
       <ExclusiveCarousel />
-      <div className="bg-[#FAF3E0]">
-        <TestimonialSection theme="light" />
+      <div className="bg-[#2F4538]">
+        <TestimonialSection  />
       </div>
+      <InstagramFeed />
       <Footer />
     </>
   );

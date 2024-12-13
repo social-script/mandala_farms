@@ -11,7 +11,7 @@ export default function CafeRestaurant() {
           <div className="grid gap-6 md:gap-12 lg:grid-cols-2 items-center">
             <div className="relative h-[240px] sm:h-[300px] lg:h-[600px] rounded-[2rem] md:rounded-[2.5rem] overflow-hidden order-1 lg:order-none group">
               <Image
-                src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf"
+                src="/food1.jpg"
                 alt="Mandala Farms Café and Restaurant"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                 fill
