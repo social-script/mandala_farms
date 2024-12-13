@@ -7,7 +7,6 @@ import CafeRestaurant from "./components/CafeRestaurant";
 import DynamicCarousel from "./components/DynamicCarousel";
 import ExclusiveCarousel from "./components/ExclusiveCarousel";
 import TestimonialSection from "./components/TestimonialSection";
-import SocialMedia from "./components/SocialMedia";
 import InstagramFeed from "./components/InstagramFeed";
 export default function Home() {
   return (

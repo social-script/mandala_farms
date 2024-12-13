@@ -4,7 +4,6 @@ import StoryHeader from '../components/StoryHeader'
 import Footer from '../components/Footer'
 import Welcome from '../components/Welcome'
 import WelcomeWithSubheadings from '../components/WelcomeWithSubheadings'
-import ImageGallery from '../components/ImageGallery'
 import TestimonialSection from '../components/TestimonialSection'
 import PhotoCarousel from '../components/PhotoCarousel'
 

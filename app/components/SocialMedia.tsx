@@ -60,7 +60,7 @@ export default function SocialMedia() {
       </div>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-        {socialImages.map((image, index) => (
+        {socialImages.map((image) => (
           <motion.div
             key={image.src}
             className={`relative overflow-hidden rounded-2xl ${image.className || ''}`}
