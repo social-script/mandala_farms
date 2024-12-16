@@ -20,7 +20,7 @@ export default function ImageGallery() {
         <div className="md:col-span-5 relative group">
           <div className="aspect-[4/3] md:aspect-[4/6] relative overflow-hidden rounded-2xl md:rounded-[2.5rem]">
             <Image
-              src="https://images.unsplash.com/photo-1553509990-7686c6f0fae1"
+              src="/collage9.jpg"
               alt="Luxury eco-cottage nestled in lush greenery"
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -34,7 +34,7 @@ export default function ImageGallery() {
           <div className="relative group">
             <div className="aspect-[16/9] relative overflow-hidden rounded-2xl md:rounded-[2.5rem]">
               <Image
-                src="https://images.unsplash.com/photo-1500076656116-558758c991c1"
+                src="/collage10.jpg"
                 alt="Panoramic view of Mandala Farms' organic fields"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -48,7 +48,7 @@ export default function ImageGallery() {
             <div className="relative group">
               <div className="aspect-[4/3] md:aspect-square relative overflow-hidden rounded-2xl md:rounded-[2.5rem]">
                 <Image
-                  src="https://images.unsplash.com/photo-1595113316349-9fa4eb24f884"
+                  src="/collage3.jpg"
                   alt="Farm-to-table organic dining experience"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -59,7 +59,7 @@ export default function ImageGallery() {
             <div className="relative group">
               <div className="aspect-[4/3] md:aspect-square relative overflow-hidden rounded-2xl md:rounded-[2.5rem]">
                 <Image
-                  src="https://images.unsplash.com/photo-1591825729269-caeb344f6df2"
+                  src="/collage8.jpg"
                   alt="Eco-friendly amenities in luxurious settings"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"

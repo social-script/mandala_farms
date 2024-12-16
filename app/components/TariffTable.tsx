@@ -18,34 +18,7 @@ const accommodations = [
     occupancy: "2-3",
     package: "2 Queen Beds & Breakfast",
     rate: "₹12,000",
-  },
-  {
-    name: "Forest View Suite",
-    type: "Deluxe Stay",
-    occupancy: "2-4",
-    package: "2 Queen Beds & Breakfast",
-    rate: "₹15,000",
-  },
-  {
-    name: "Valley View Villa",
-    type: "Premium Stay",
-    occupancy: "4-6",
-    package: "2 Queen Beds & Breakfast",
-    rate: "₹25,000",
-  },
-  {
-    name: "Bamboo Cottage",
-    type: "Standard Stay",
-    occupancy: "2",
-    package: "2 Queen Beds & Breakfast",
-    rate: "₹8,000",
-  },
-  {
-    name: "Garden Suite",
-    type: "Deluxe Stay",
-    occupancy: "2-3",
-    package: "2 Queen Beds & Breakfast",
-    rate: "₹10,000",
+    rateOnWeekends:"15,000"
   },
 ]
 
@@ -87,9 +60,9 @@ export default function TariffTable() {
               <TableRow className="border-b border-white/10">
                 <TableHead className="w-[250px] text-white/70 font-poppins py-3 px-4">Accommodation</TableHead>
                 <TableHead className="text-white/70 font-poppins py-3 px-4">Type</TableHead>
-                <TableHead className="text-white/70 font-poppins py-3 px-4">Max Occupancy</TableHead>
                 <TableHead className="text-white/70 font-poppins py-3 px-4">Package</TableHead>
-                <TableHead className="text-right text-white/70 font-poppins py-3 px-4">Rate per Night</TableHead>
+                <TableHead className="text-right text-white/70 font-poppins py-3 px-4">Rate On Weekdays</TableHead>
+                <TableHead className="text-right text-white/70 font-poppins py-3 px-4">Rate On Weekends</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -100,9 +73,9 @@ export default function TariffTable() {
                 >
                   <TableCell className="font-playfair text-white py-3 px-4">{accommodation.name}</TableCell>
                   <TableCell className="font-poppins text-white/80 py-3 px-4">{accommodation.type}</TableCell>
-                  <TableCell className="font-poppins text-white/80 py-3 px-4">{accommodation.occupancy}</TableCell>
                   <TableCell className="font-poppins text-white/80 py-3 px-4">{accommodation.package}</TableCell>
                   <TableCell className="text-right font-poppins text-[#E8FF8B] py-3 px-4">{accommodation.rate}</TableCell>
+                  <TableCell className="text-right font-poppins text-[#E8FF8B] py-3 px-4">{accommodation.rateOnWeekends}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
