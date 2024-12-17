@@ -26,6 +26,18 @@ const photos = [
     src: "/outside_view.jpg",
     alt: "Sustainable farm activities"
   },
+  {
+    src: "/2024-11-20.jpg",
+    alt: "Sustainable farm activities"
+  },
+  {
+    src: "/2024-11-18.jpg",
+    alt: "Sustainable farm activities"
+  },
+  {
+    src: "/2024-11-17.jpg",
+    alt: "Sustainable farm activities"
+  },
 ]
 
 export default function PhotoCarousel() {

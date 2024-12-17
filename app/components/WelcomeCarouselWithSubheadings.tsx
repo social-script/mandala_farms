@@ -49,8 +49,8 @@ export default function WelcomeCarouselWithSubheadings({
       button: 'bg-[#2F4538] text-white hover:bg-[#2F4538]/90',
       border: 'border-[#2F4538]/10',
       line: 'bg-[#2F4538]/10',
-      dots: 'bg-[#2F4538]',
-      dotsInactive: 'bg-[#2F4538]/30'
+      dots: 'bg-[#E8FF8B]',
+      dotsInactive: 'bg-[#E8FF8B]/30'
     },
     dark: {
       badge: 'bg-white/10 text-[#E8FF8B]',

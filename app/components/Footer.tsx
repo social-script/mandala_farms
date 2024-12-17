@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { DiscIcon as  Instagram} from 'lucide-react'
+import { Instagram } from 'lucide-react'
 import Link from 'next/link'
 
 export default function Footer() {
@@ -31,16 +31,12 @@ export default function Footer() {
               {/* <li><a href="#" className="text-white hover:text-[#E8FF8B] transition-colors duration-300 font-poppins text-sm md:text-base">Araku Valley</a></li> */}
             </ul>
           </div>
-          <div>
-            <h3 className="font-playfair text-[#E8FF8B] text-lg md:text-xl mb-4 md:mb-6">Experience</h3>
-            <ul className="space-y-2 md:space-y-4">
-            <li><a href="/the-cottages" className="text-white hover:text-[#E8FF8B] transition-colors duration-300 font-poppins text-sm md:text-base">The Cottages</a></li>
-              {/* <li><a href="#" className="text-white hover:text-[#E8FF8B] transition-colors duration-300 font-poppins text-sm md:text-base">Café & Restaurant</a></li> */}
-            </ul>
-          </div>
+       
           <div className="col-span-2 md:col-span-1">
+            
             <h3 className="font-playfair text-[#E8FF8B] text-lg md:text-xl mb-4 md:mb-6">Stay</h3>
             <ul className="space-y-2 md:space-y-4">
+            <li><a href="/the-cottages" className="text-white hover:text-[#E8FF8B] transition-colors duration-300 font-poppins text-sm md:text-base">The Cottages</a></li>
               <li><a href="/tariff" className="text-white hover:text-[#E8FF8B] transition-colors duration-300 font-poppins text-sm md:text-base">Tariff</a></li>
             </ul>
           </div>
@@ -48,15 +44,9 @@ export default function Footer() {
 
         <div className="flex flex-col md:flex-row justify-between items-center border-t border-white/10 pt-6 md:pt-8">
           <div className="flex space-x-3 md:space-x-4 mb-4 md:mb-0">
-            {/* <a href="#" className="p-2 bg-[#E8FF8B]/20 rounded-full hover:bg-[#E8FF8B]/30 transition-colors">
-              <Discord className="w-5 h-5 md:w-6 md:h-6 text-[#E8FF8B]" />
-            </a> */}
             <a href="https://www.instagram.com/mandalafarms_arakuvalley/" className="p-2 bg-[#E8FF8B]/20 rounded-full hover:bg-[#E8FF8B]/30 transition-colors">
               <Instagram className="w-5 h-5 md:w-6 md:h-6 text-[#E8FF8B]" />
             </a>
-            {/* <a href="#" className="p-2 bg-[#E8FF8B]/20 rounded-full hover:bg-[#E8FF8B]/30 transition-colors">
-              <Send className="w-5 h-5 md:w-6 md:h-6 text-[#E8FF8B]" />
-            </a> */}
           </div>
           <div className="flex flex-wrap justify-center md:justify-end gap-3 md:gap-4 text-xs md:text-sm text-white/60">
             <span>©2024 MANDALA FARMS</span>

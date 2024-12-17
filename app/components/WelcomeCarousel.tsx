@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, TouchEvent } from 'react'
 import Image from 'next/image'
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from 'lucide-react'
@@ -33,6 +33,8 @@ export default function WelcomeCarousel({
 }: WelcomeCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const videoRef = useRef<HTMLVideoElement>(null)
+  const [touchStart, setTouchStart] = useState<number>(0)
+  const [touchEnd, setTouchEnd] = useState<number>(0)
 
   const styles = {
     light: {
@@ -40,8 +42,8 @@ export default function WelcomeCarousel({
       title: 'text-[#2F4538]',
       description: 'text-[#2F4538]/80',
       button: 'bg-[#2F4538] text-white hover:bg-[#2F4538]/90',
-      dots: 'bg-[#2F4538]',
-      dotsInactive: 'bg-[#2F4538]/30'
+      dots: 'bg-[#E8FF8B]',
+      dotsInactive: 'bg-[#E8FF8B]/30'
     },
     dark: {
       badge: 'bg-white/10 text-[#E8FF8B]',
@@ -54,6 +56,26 @@ export default function WelcomeCarousel({
   }
 
   const currentStyle = styles[theme]
+
+  const handleTouchStart = (e: TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX)
+  }
+
+  const handleTouchMove = (e: TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX)
+  }
+
+  const handleTouchEnd = () => {
+    if (touchStart - touchEnd > 75) {
+      // Swipe left
+      setCurrentIndex((current) => (current + 1) % media.length)
+    }
+
+    if (touchStart - touchEnd < -75) {
+      // Swipe right
+      setCurrentIndex((current) => (current - 1 + media.length) % media.length)
+    }
+  }
 
   const handleMediaEnd = () => {
     setCurrentIndex((current) => (current + 1) % media.length)
@@ -97,7 +119,12 @@ export default function WelcomeCarousel({
           </div>
         </div>
 
-        <div className="relative h-[300px] sm:h-[400px] md:h-[500px] rounded-[2rem] md:rounded-[2.5rem] overflow-hidden group">
+        <div 
+          className="relative h-[300px] sm:h-[400px] md:h-[500px] rounded-[2rem] md:rounded-[2.5rem] overflow-hidden group"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
           {media.map((item, index) => (
             <div
               key={`${item.type}-${index}`}
