@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import Image from "next/image"
-import { ArrowLeft, ArrowRight} from 'lucide-react'
+import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 
 const photos = [
@@ -29,6 +29,19 @@ const photos = [
 ]
 
 export default function PhotoCarousel() {
+  const [api, setApi] = React.useState<any>()
+  const [current, setCurrent] = React.useState(0)
+
+  React.useEffect(() => {
+    if (!api) {
+      return
+    }
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap())
+    })
+  }, [api])
+
   return (
     <section className="container mx-auto px-4 py-12 md:py-24">
       <div className="space-y-8 md:space-y-12">
@@ -46,6 +59,7 @@ export default function PhotoCarousel() {
             align: "start",
             loop: true,
           }}
+          setApi={setApi}
           className="w-full"
         >
           <CarouselContent className="-ml-3 md:-ml-4">
@@ -64,14 +78,34 @@ export default function PhotoCarousel() {
             ))}
           </CarouselContent>
 
-          <div className="flex items-center justify-between mt-6 md:mt-8">
-            <div className="flex gap-3">
-              <CarouselPrevious className="h-10 w-10 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm border-0">
-                <ArrowLeft className="h-4 w-4 text-white" />
-              </CarouselPrevious>
-              <CarouselNext className="h-10 w-10 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm border-0">
-                <ArrowRight className="h-4 w-4 text-white" />
-              </CarouselNext>
+          {/* Navigation controls */}
+          <div className="mt-6 md:mt-8">
+            {/* Arrows - Desktop only */}
+            <div className="hidden md:flex items-center justify-between">
+              <div className="flex gap-3">
+                <CarouselPrevious className="h-10 w-10 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm border-0">
+                  <ArrowLeft className="h-4 w-4 text-white" />
+                </CarouselPrevious>
+                <CarouselNext className="h-10 w-10 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm border-0">
+                  <ArrowRight className="h-4 w-4 text-white" />
+                </CarouselNext>
+              </div>
+            </div>
+
+            {/* Dots - Mobile only */}
+            <div className="flex md:hidden justify-center gap-2">
+              {photos.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => api?.scrollTo(index)}
+                  className={`w-2 h-2 rounded-full transition-all ${
+                    current === index 
+                      ? 'w-4 bg-[#E8FF8B]' 
+                      : 'bg-white/70'
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
             </div>
           </div>
         </Carousel>
