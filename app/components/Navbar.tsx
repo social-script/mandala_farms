@@ -31,12 +31,13 @@ export default function Navbar() {
           
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
+          <Link href="/our-story" className="text-white hover:text-[#E8FF8B] transition-colors font-poppins">
+              Our Story
+            </Link>
           <Link href="/the-cottages" className="text-white hover:text-[#E8FF8B] transition-colors font-poppins">
               The Cottages
             </Link>
-            <Link href="/our-story" className="text-white hover:text-[#E8FF8B] transition-colors font-poppins">
-              Our Story
-            </Link>
+            
             <Link href="/the-farm" className="text-white hover:text-[#E8FF8B] transition-colors font-poppins">
               The Farm
             </Link>
@@ -93,6 +94,13 @@ export default function Navbar() {
                 Our Story
               </Link>
               <Link 
+                href="/the-cottages" 
+                className="text-white hover:text-[#E8FF8B] transition-colors font-poppins py-2"
+                onClick={toggleMenu}
+              >
+                The Cottages
+              </Link>
+              <Link 
                 href="/the-farm" 
                 className="text-white hover:text-[#E8FF8B] transition-colors font-poppins py-2"
                 onClick={toggleMenu}
@@ -120,13 +128,7 @@ export default function Navbar() {
               >
                 Tariff
               </Link>
-              <Link 
-                href="/the-cottages" 
-                className="text-white hover:text-[#E8FF8B] transition-colors font-poppins py-2"
-                onClick={toggleMenu}
-              >
-                The Cottages
-              </Link>
+             
               {/* <Link 
                 href="/cafe" 
                 className="text-white hover:text-[#E8FF8B] transition-colors font-poppins py-2"
