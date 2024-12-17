@@ -3,7 +3,7 @@
 import * as React from "react"
 import Image from "next/image"
 import { ArrowLeft, ArrowRight } from 'lucide-react'
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel"
 
 const photos = [
   {
@@ -29,7 +29,7 @@ const photos = [
 ]
 
 export default function PhotoCarousel() {
-  const [api, setApi] = React.useState<any>()
+  const [api, setApi] = React.useState<CarouselApi | null>(null)
   const [current, setCurrent] = React.useState(0)
 
   React.useEffect(() => {
