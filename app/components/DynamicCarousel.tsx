@@ -114,14 +114,14 @@ export default function DynamicCarousel() {
           >
             Discover Serenity in Nature&apos;s Embrace
           </motion.h2>
-          <motion.p 
+          {/* <motion.p 
             className="font-poppins text-white/80 text-sm md:text-lg leading-relaxed mb-5 md:mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             Indulge in a harmonious blend of luxury and sustainability, where every moment is crafted to create unforgettable memories.
-          </motion.p>
+          </motion.p> */}
           
           {/* Category List */}
           <div className="space-y-2.5 md:space-y-3">

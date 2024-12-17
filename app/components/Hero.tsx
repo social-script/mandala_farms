@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { Button } from "@/components/ui/button"
 
 export default function Hero() {
@@ -28,19 +29,16 @@ export default function Hero() {
             className="object-cover transition-transform duration-700 hover:scale-105"
             priority
           />
-          <Button 
-            className="absolute bottom-4 md:bottom-8 right-4 md:right-8 bg-white/90 backdrop-blur-sm text-[#2F4538] 
-                     hover:bg-white hover:scale-105 transition-all duration-300 rounded-full font-poppins
-                     text-sm md:text-base px-4 md:px-6 py-2 md:py-2.5"
-          >
-            Our Story
-            <span className="ml-2">→</span>
-          </Button>
-          <div className="absolute bottom-4 md:bottom-8 left-4 md:left-8 flex gap-1.5 md:gap-2">
-            <button className="w-1.5 md:w-2 h-1.5 md:h-2 rounded-full bg-white/90" />
-            <button className="w-1.5 md:w-2 h-1.5 md:h-2 rounded-full bg-white/40" />
-            <button className="w-1.5 md:w-2 h-1.5 md:h-2 rounded-full bg-white/40" />
-          </div>
+          <Link href="/our-story">
+            <Button 
+              className="absolute bottom-4 md:bottom-8 right-4 md:right-8 bg-white/90 backdrop-blur-sm text-[#2F4538] 
+                       hover:bg-white hover:scale-105 transition-all duration-300 rounded-full font-poppins
+                       text-sm md:text-base px-4 md:px-6 py-2 md:py-2.5"
+            >
+              Our Story
+              <span className="ml-2">→</span>
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

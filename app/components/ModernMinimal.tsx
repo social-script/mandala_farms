@@ -33,10 +33,10 @@ export default function ModernMinimal() {
         <div className="col-span-12 lg:col-span-4 flex flex-col gap-6 md:gap-8">
           {/* Top card */}
           <div className="relative rounded-[2rem] md:rounded-[2.5rem] overflow-hidden h-[240px] md:h-[280px] bg-[#FAF3E0] p-6 md:p-10 group">
-            <Badge variant="default" className="bg-white text-black mb-4 md:mb-5 text-sm md:text-base px-3 md:px-4 py-1.5 rounded-full 
+            {/* <Badge variant="default" className="bg-white text-black mb-4 md:mb-5 text-sm md:text-base px-3 md:px-4 py-1.5 rounded-full 
                       transition-transform duration-300 hover:scale-105">
               Café cum Restaurant 
-            </Badge>
+            </Badge> */}
             <div className="max-w-[85%]">
               <p className="font-poppins text-[#2F4538]/70 text-xs md:text-sm leading-relaxed mb-3 md:mb-4">
                 Indulge in farm-fresh cuisine that celebrates the authentic tastes and stories of the land.
@@ -45,9 +45,9 @@ export default function ModernMinimal() {
                 Locally Crafted Flavors
               </h3>
             </div>
-            <button className="absolute top-6 md:top-10 right-6 md:right-10 p-3 md:p-4 bg-[#2F4538]/5 rounded-full hover:bg-[#2F4538]/10 transition-all">
+            {/* <button className="absolute top-6 md:top-10 right-6 md:right-10 p-3 md:p-4 bg-[#2F4538]/5 rounded-full hover:bg-[#2F4538]/10 transition-all">
               <ArrowRight className="w-5 h-5 md:w-6 md:h-6 text-[#2F4538]/70" />
-            </button>
+            </button> */}
           </div>
 
           {/* Bottom card */}
@@ -70,9 +70,9 @@ export default function ModernMinimal() {
                 Experience the seamless fusion of sustainable luxury and natural beauty of Araku Valley.
               </p>
             </div>
-            <button className="absolute top-6 md:top-10 right-6 md:right-10 p-3 md:p-4 bg-white/10 backdrop-blur-sm rounded-full hover:bg-white/20 transition-all">
+            {/* <button className="absolute top-6 md:top-10 right-6 md:right-10 p-3 md:p-4 bg-white/10 backdrop-blur-sm rounded-full hover:bg-white/20 transition-all">
               <ArrowRight className="w-5 h-5 md:w-6 md:h-6 text-white" />
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

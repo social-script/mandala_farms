@@ -54,7 +54,7 @@ export default function ContactSection({ theme = 'dark' }: ContactSectionProps) 
                   theme === 'light' ? 'text-[#2F4538]' : 'text-white'
                 )}
               >
-                reservations@mandalafarms.com
+                mandalafarmsarakuvalley@gmail.com
               </Link>
             </div>
 
@@ -71,15 +71,38 @@ export default function ContactSection({ theme = 'dark' }: ContactSectionProps) 
               )}>
                 Available daily from 9 AM to 7 PM IST
               </p>
-              <Link 
-                href="tel:+91-9876543210" 
-                className={cn(
-                  "font-poppins text-lg hover:underline decoration-[#E8FF8B] underline-offset-4",
-                  theme === 'light' ? 'text-[#2F4538]' : 'text-white'
-                )}
-              >
-                +91 (987) 654-3210
-              </Link>
+              <div className="space-y-2">
+                <Link 
+                  href="tel:+919529652435" 
+                  className={cn(
+                    "font-poppins text-lg hover:underline decoration-[#E8FF8B] underline-offset-4 flex items-center gap-2 group",
+                    theme === 'light' ? 'text-[#2F4538]' : 'text-white'
+                  )}
+                >
+                  <span className="font-medium">+91 95296 52435</span>
+                  <span className={cn(
+                    "text-sm",
+                    theme === 'light' ? 'text-[#2F4538]/70' : 'text-white/70'
+                  )}>
+                    (Primary)
+                  </span>
+                </Link>
+                <Link 
+                  href="tel:+919529641655" 
+                  className={cn(
+                    "font-poppins text-lg hover:underline decoration-[#E8FF8B] underline-offset-4 flex items-center gap-2 group",
+                    theme === 'light' ? 'text-[#2F4538]' : 'text-white'
+                  )}
+                >
+                  <span className="font-medium">+91 95296 41655</span>
+                  <span className={cn(
+                    "text-sm",
+                    theme === 'light' ? 'text-[#2F4538]/70' : 'text-white/70'
+                  )}>
+                    (Secondary)
+                  </span>
+                </Link>
+              </div>
             </div>
 
             <div className="space-y-1.5">
@@ -102,7 +125,7 @@ export default function ContactSection({ theme = 'dark' }: ContactSectionProps) 
                 Andhra Pradesh, India 531149
               </p>
               <Link 
-                href="https://maps.google.com/?q=Araku+Valley,+Andhra+Pradesh,+India" 
+                href="https://maps.app.goo.gl/DDmaoXYAm6GMnpQSA" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className={cn(
@@ -120,7 +143,7 @@ export default function ContactSection({ theme = 'dark' }: ContactSectionProps) 
         <div className="flex items-center justify-center">
           <div className="h-[500px] md:h-[600px] w-full rounded-[2rem] md:rounded-[2.5rem] overflow-hidden">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61139.87089134504!2d82.79603667910156!3d18.32833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3c8c8d99bd3925%3A0x99da89b0b8ccf3c3!2sAraku%20Valley%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1702397762269!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3788.2995417717784!2d82.93899569999999!3d18.2879048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3bcbe6331373b5%3A0x3d3b6062fc21a8f3!2sMandala%20Farms%2C%20Araku%20Valley!5e0!3m2!1sen!2sin!4v1734420108211!5m2!1sen!2sin"
               width="100%"
               height="100%"
               style={{ border: 0 }}

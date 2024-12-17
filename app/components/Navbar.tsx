@@ -31,6 +31,9 @@ export default function Navbar() {
           
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
+          <Link href="/the-cottages" className="text-white hover:text-[#E8FF8B] transition-colors font-poppins">
+              The Cottages
+            </Link>
             <Link href="/our-story" className="text-white hover:text-[#E8FF8B] transition-colors font-poppins">
               Our Story
             </Link>
@@ -46,9 +49,7 @@ export default function Navbar() {
             <Link href="/tariff" className="text-white hover:text-[#E8FF8B] transition-colors font-poppins">
               Tariff
             </Link>
-            <Link href="/the-cottages" className="text-white hover:text-[#E8FF8B] transition-colors font-poppins">
-              The Cottages
-            </Link>
+           
             {/* <Link href="/cafe" className="text-white hover:text-[#E8FF8B] transition-colors font-poppins">
               Café & Restaurant
             </Link> */}

@@ -17,7 +17,7 @@ export default function InstagramFeed() {
       alt: 'Scuba diving adventure with fish',
     },
     { 
-      src: '/insta2.jpg',
+      src: '/cottage4.jpg',
       alt: 'Scenic coastal cliff view', 
     },
     { 
@@ -27,6 +27,11 @@ export default function InstagramFeed() {
     { 
       src: '/insta4.jpg',
       alt: 'Fine dining experience',
+    },
+    { 
+      src: '/outside.jpg',
+      alt: 'Additional mobile view image',
+      className: 'sm:hidden'
     }
   ]
 
@@ -51,6 +56,7 @@ export default function InstagramFeed() {
             variant="default" 
             className="mt-6 md:mt-0 bg-[#2F4538] text-white hover:bg-[#2F4538]/90 rounded-full px-6 py-6 h-auto
                      font-poppins inline-flex items-center gap-2 hover:shadow-lg transition-all duration-300"
+            onClick={() => window.open('https://www.instagram.com/mandalafarms_arakuvalley/', '_blank')}
           >
             Follow Us
             <ArrowUpRight className="h-4 w-4" />

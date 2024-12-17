@@ -22,7 +22,6 @@ export default function TheFarmPage() {
           badge="ORGANIC FARMING"
           title="Sustainable Agriculture: Growing with Nature's Wisdom"
           description="Our farm follows organic and permaculture principles, producing fresh vegetables, fruits, and herbs. We work in harmony with nature to create a sustainable ecosystem."
-          buttonText="Explore Our Methods"
           imageSrc="/farming4.jpg"
           imageAlt="Organic farming at Mandala Farms"
         />
@@ -32,7 +31,6 @@ export default function TheFarmPage() {
   badge="FARM LIFE"
   title="A Haven for Wildlife and Farm Animals"
   description="Our farm is home to a variety of animals, from free-range chickens to friendly goats. Experience the joy of connecting with nature and our animal companions."
-  buttonText="Book an Experience"
   media={[
     { 
       type: 'image',
@@ -78,7 +76,6 @@ export default function TheFarmPage() {
       text: "Participate in workshops on organic farming, composting, and sustainable living practices."
     }
   ]}
-  buttonText="Book an Experience"
   media={[
     {
       type: 'image',

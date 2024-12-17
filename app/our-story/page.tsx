@@ -43,7 +43,6 @@ export default function OurStoryPage() {
       text: "Using locally sourced, eco-friendly materials that minimize environmental impact."
     }
   ]}
-  buttonText="Book an Experience"
   media={[
     {
       type: 'image',
@@ -74,7 +73,6 @@ export default function OurStoryPage() {
   badge="NATURAL HARMONY"
   title="Experience Harmony: Where Nature and Animals Coexist in Perfect Balance"
   description="At our farm, every moment is a celebration of nature's beauty and the joy of animal companionship. Embrace a lifestyle that nurtures both your spirit and the environment around you."
-  buttonText="Meet Our Animals"
   media={[
     { 
       type: 'image',
@@ -87,7 +85,7 @@ export default function OurStoryPage() {
     },
     { 
       type: 'image',
-      src: "/animal6.jpg", 
+      src: "/animal5.jpg", 
       alt: "Luxury eco-cottage view 2" 
     },
     { 
@@ -125,7 +123,6 @@ export default function OurStoryPage() {
       text: "Participate in workshops on organic farming, composting, and sustainable living practices."
     }
   ]}
-  buttonText="Book an Experience"
   media={[
     {
       type: 'image',

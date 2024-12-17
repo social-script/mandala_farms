@@ -21,9 +21,11 @@ export default function Home() {
         buttonText="Discover Timeless Charm"
         imageSrc="/bedroom.jpg"
         imageAlt="Modern eco-friendly suite at Mandala Farms"
+        buttonLink="/the-cottages"
       />
       <CafeRestaurant />
       <DynamicCarousel />
+      
       <ExclusiveCarousel />
       <div className="bg-[#2F4538]">
         <TestimonialSection  />

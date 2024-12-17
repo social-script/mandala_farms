@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from 'lucide-react'
+import Link from 'next/link'
 
 interface MediaItem {
   type: 'image' | 'video';
@@ -15,7 +16,8 @@ interface WelcomeCarouselProps {
   badge: string;
   title: string;
   description: string;
-  buttonText: string;
+  buttonText?: string;
+  buttonLink?: string;
   media: MediaItem[];
   theme?: 'light' | 'dark'
 }
@@ -25,6 +27,7 @@ export default function WelcomeCarousel({
   title,
   description,
   buttonText,
+  buttonLink,
   media,
   theme = 'dark'
 }: WelcomeCarouselProps) {
@@ -80,12 +83,18 @@ export default function WelcomeCarousel({
           <p className={`font-poppins ${currentStyle.description} text-sm md:text-lg leading-relaxed`}>
             {description}
           </p>
-          <Button 
-            className={`rounded-full font-poppins text-sm md:text-base px-4 md:px-6 py-2 md:py-2.5 ${currentStyle.button}`}
-          >
-            {buttonText}
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </Button>
+          <div>
+          {buttonText && (
+            <Link href={buttonLink || '#'}>
+              <Button 
+                className={`rounded-full font-poppins text-sm md:text-base px-4 md:px-6 py-2 md:py-2.5 ${currentStyle.button}`}
+              >
+                {buttonText}
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+          )}
+          </div>
         </div>
 
         <div className="relative h-[300px] sm:h-[400px] md:h-[500px] rounded-[2rem] md:rounded-[2.5rem] overflow-hidden group">

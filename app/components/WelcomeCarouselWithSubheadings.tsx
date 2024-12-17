@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from 'lucide-react'
+import Link from 'next/link'
 
 interface MediaItem {
   type: 'image' | 'video';
@@ -19,7 +20,8 @@ interface WelcomeCarouselWithSubheadingsProps {
     heading: string;
     text: string;
   }[];
-  buttonText: string;
+  buttonText?: string;
+  buttonLink?: string;
   media: MediaItem[];
   theme?: 'light' | 'dark';
 }
@@ -30,6 +32,7 @@ export default function WelcomeCarouselWithSubheadings({
   description,
   subheadings,
   buttonText,
+  buttonLink,
   media,
   theme = 'dark'
 }: WelcomeCarouselWithSubheadingsProps) {
@@ -163,13 +166,18 @@ export default function WelcomeCarouselWithSubheadings({
               ))}
             </div>
           )}
-
-          <Button 
-            className={`rounded-full font-poppins text-sm md:text-base px-6 py-3 ${currentStyle.button} hover:translate-x-2 transition-all duration-300`}
-          >
-            {buttonText}
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </Button>
+          <div>
+          {buttonText && (
+            <Link href={buttonLink || '#'}>
+              <Button 
+                className={`rounded-full font-poppins text-sm md:text-base px-6 py-3 ${currentStyle.button} hover:translate-x-2 transition-all duration-300`}
+              >
+                {buttonText}
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+          )}
+          </div>
         </div>
       </div>
     </section>

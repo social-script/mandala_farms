@@ -26,10 +26,10 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    quote: "Mandala Farms offers a perfect blend of luxury and nature. The eco-cottages are thoughtfully designed, and the farm-to-table experience is exceptional.",
-    author: "Emma Thompson",
-    location: "Mumbai, India",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb",
+    quote: "Mandala Farms is a serene nature resort perfect for a peaceful getaway. Surrounded by lush greenery, it offers comfortable stays, warm hospitality, and activities like nature walks and organic farming.",
+    author: "Abhinab Chetia",
+    location: "Local Guide",
+    image: "/review1.png",
     gradient: {
       dark: "bg-gradient-to-br from-[#2F4538] via-[#3A5647] to-[#243A2D]",
       light: "bg-gradient-to-br from-[#FAF3E0] via-[#F5ECD6] to-[#EDE5CC]"
@@ -37,10 +37,10 @@ const testimonials: Testimonial[] = [
   },
   {
     id: 2,
-    quote: "The farm-to-table dining experience at Mandala Farms is unparalleled. Every meal was a celebration of local flavors and sustainable practices.",
-    author: "Rajesh Sharma",
+    quote: "Excellent eco friendly place to stay in the lap of nature... Great job Rajeev garu for bringing this kind of eco friendly stay to this beautiful valley araku.",
+    author: "Naseer Mohd",
     location: "Bangalore, India",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d",
+    image: "/review3.png",
     gradient: {
       dark: "bg-gradient-to-br from-[#3A5647] via-[#2F4538] to-[#1F3225]",
       light: "bg-gradient-to-br from-[#F5ECD6] via-[#FAF3E0] to-[#F0E8D2]"
@@ -49,9 +49,9 @@ const testimonials: Testimonial[] = [
   {
     id: 3,
     quote: "I've never felt more connected to nature while enjoying such comfort. The morning views of Araku Valley are breathtaking.",
-    author: "Priya Patel",
-    location: "Hyderabad, India",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+    author: "Glaicy Tony",
+    location: "Kerala, India",
+    image: "/review4.png",
     gradient: {
       dark: "bg-gradient-to-br from-[#243A2D] via-[#2F4538] to-[#3A5647]",
       light: "bg-gradient-to-br from-[#EDE5CC] via-[#FAF3E0] to-[#F5ECD6]"

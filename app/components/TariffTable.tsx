@@ -10,6 +10,7 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import { Download, ArrowRight } from 'lucide-react'
+import Link from "next/link"
 
 const accommodations = [
   {
@@ -39,18 +40,14 @@ export default function TariffTable() {
             </p>
           </div>
           <div className="flex gap-3 md:gap-4">
-            <Button 
-              className="bg-white/10 hover:bg-white/20 text-white rounded-full px-4 md:px-6 py-2 md:py-3 text-sm md:text-base"
-            >
-              <Download className="w-4 h-4 md:w-5 md:h-5 mr-2" />
-              Download Rates
-            </Button>
+            <Link href='/contact-us'>
             <Button 
               className="bg-[#E8FF8B] text-[#2F4538] hover:bg-[#E8FF8B]/90 rounded-full px-4 md:px-6 py-2 md:py-3 text-sm md:text-base"
             >
               Book Now
               <ArrowRight className="w-4 h-4 md:w-5 md:h-5 ml-2" />
             </Button>
+            </Link>
           </div>
         </div>
 
