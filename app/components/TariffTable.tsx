@@ -9,7 +9,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-import { Download, ArrowRight } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import Link from "next/link"
 
 const accommodations = [

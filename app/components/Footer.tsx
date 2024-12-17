@@ -1,5 +1,6 @@
 import Image from 'next/image'
-import { DiscIcon as Discord, Instagram, Send } from 'lucide-react'
+import { DiscIcon as  Instagram} from 'lucide-react'
+import Link from 'next/link'
 
 export default function Footer() {
   return (
@@ -24,7 +25,7 @@ export default function Footer() {
           <div>
             <h3 className="font-playfair text-[#E8FF8B] text-lg md:text-xl mb-4 md:mb-6">Discover</h3>
             <ul className="space-y-2 md:space-y-4">
-            <li><a href="/" className="text-white hover:text-[#E8FF8B] transition-colors duration-300 font-poppins text-sm md:text-base">Home</a></li>
+            <li><Link href="/" className="text-white hover:text-[#E8FF8B] transition-colors duration-300 font-poppins text-sm md:text-base">Home</Link></li>       
               <li><a href="/our-story" className="text-white hover:text-[#E8FF8B] transition-colors duration-300 font-poppins text-sm md:text-base">Our Story</a></li>
               <li><a href="/the-farm" className="text-white hover:text-[#E8FF8B] transition-colors duration-300 font-poppins text-sm md:text-base">The Farm</a></li>
               {/* <li><a href="#" className="text-white hover:text-[#E8FF8B] transition-colors duration-300 font-poppins text-sm md:text-base">Araku Valley</a></li> */}
