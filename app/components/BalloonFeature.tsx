@@ -2,8 +2,6 @@
 
 import Image from "next/image"
 import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
 
 export default function BalloonFeature() {
@@ -20,11 +18,11 @@ export default function BalloonFeature() {
           priority
         />
         
-        {/* Updated Gradient Overlay - More subtle and consistent */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/20" />
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60" />
 
         {/* Content Container */}
-        <div className="absolute inset-0 flex flex-col items-center justify-start pt-16 md:pt-24">
+        <div className="absolute inset-0 flex flex-col items-center justify-center">
           <div className="container mx-auto px-4 text-center">
             {/* Main Title */}
             <motion.h2
@@ -38,12 +36,12 @@ export default function BalloonFeature() {
           </div>
         </div>
 
-        {/* Updated bottom border - Now pure white */}
-        <div className="absolute bottom-0 left-0 w-full h-px bg-white/20" />
+        {/* Decorative Elements */}
+        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
         
         {/* Time Badge */}
         <div className="absolute bottom-6 left-6 md:bottom-8 md:left-8">
-          <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-white text-xs md:text-sm font-poppins">
+          <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-white/90 text-xs md:text-sm font-poppins">
             Sunrise Flights: 6:30 AM - 8:30 AM
           </div>
         </div>

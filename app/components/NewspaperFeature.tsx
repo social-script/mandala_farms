@@ -112,12 +112,12 @@ export default function NewspaperFeature() {
                 
                 <blockquote className="space-y-2 md:space-y-4">
                   <p className="font-playfair text-[#2F4435] text-base md:text-xl lg:text-2xl leading-snug md:leading-relaxed">
-                    "For those seeking a tranquil escape, the newly opened 
+                    &quot;For those seeking a tranquil escape, the newly opened 
                     <span className="text-[#2F4435] font-semibold relative mx-1">
                       Mandala Farm
                       <span className="absolute bottom-0 left-0 w-full h-[1px] bg-[#2F4435]/30"></span>
                     </span>
-                    in Araku offers a retreat that bridges the gap between modern luxury and Nature's tranquility."
+                    in Araku offers a retreat that bridges the gap between modern luxury and Nature&apos;s tranquility.&quot;
                   </p>
                   <footer className="font-poppins text-[#2F4435]/60 text-xs md:text-sm">
                     — Metro Plus, The Hindu
@@ -127,7 +127,7 @@ export default function NewspaperFeature() {
 
               <div className="space-y-3 md:space-y-6">
                 <p className="font-poppins text-white/80 text-xs md:text-base leading-relaxed">
-                  We're honored to be featured in this comprehensive piece about Araku Valley's winter attractions.
+                  We&apos;re honored to be featured in this comprehensive piece about Araku Valley&apos;s winter attractions.
                 </p>
                 <Button 
                   className="bg-[#FAF3E0] hover:bg-[#FAF3E0]/90 text-[#2F4435] rounded-full font-poppins text-xs md:text-sm group transition-all duration-300 h-8 md:h-10"

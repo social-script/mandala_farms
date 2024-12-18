@@ -236,7 +236,7 @@ export default function GalleryCarousel() {
         <div className="space-y-8">
           <div>
             <h2 className="font-playfair text-white text-4xl md:text-5xl lg:text-6xl font-medium mb-8">
-              Discover Araku's Hidden Treasures
+              Discover Araku&apos;s Hidden Treasures
             </h2>
             <p className="font-poppins text-white/60 text-sm md:text-base leading-relaxed mb-8">
               Discover the breathtaking landscapes and cultural heritage of Araku Valley through our lens. 
