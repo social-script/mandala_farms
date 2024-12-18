@@ -41,19 +41,18 @@ export default function Navbar() {
             <Link href="/the-farm" className="text-white hover:text-[#E8FF8B] transition-colors font-poppins">
               The Farm
             </Link>
-            {/* <Link href="/araku-valley" className="text-white hover:text-[#E8FF8B] transition-colors font-poppins">
+            <Link href="/araku-valley" className="text-white hover:text-[#E8FF8B] transition-colors font-poppins">
               Araku Valley
             </Link>
-            <Link href="/experiences" className="text-white hover:text-[#E8FF8B] transition-colors font-poppins">
+            {/* <Link href="/experiences" className="text-white hover:text-[#E8FF8B] transition-colors font-poppins">
               Experiences
             </Link> */}
             <Link href="/tariff" className="text-white hover:text-[#E8FF8B] transition-colors font-poppins">
               Tariff
-            </Link>
-           
-            {/* <Link href="/cafe" className="text-white hover:text-[#E8FF8B] transition-colors font-poppins">
+            </Link>          
+            <Link href="/cafe" className="text-white hover:text-[#E8FF8B] transition-colors font-poppins">
               Café & Restaurant
-            </Link> */}
+            </Link>
           </nav>
 
           {/* Contact Us Button - Desktop */}

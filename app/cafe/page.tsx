@@ -6,6 +6,7 @@ import Welcome from '../components/Welcome'
 import WelcomeWithSubheadings from '../components/WelcomeWithSubheadings'
 import ImageGallery from '../components/ImageGallery'
 import dynamic from 'next/dynamic'
+import BalloonFeature from '../components/BalloonFeature'
 
 const TestimonialSection = dynamic(() => import('../components/TestimonialSection'), {
   loading: () => <div className="h-96 bg-[#FAF3E0] animate-pulse" />
@@ -15,6 +16,7 @@ export default function CafePage() {
   return (
     <div className="bg-gradient-to-b from-[#2F4538] to-[#243A2D]">
       <Navbar />
+      <BalloonFeature />
       <StoryHeader 
         badge="DINING EXPERIENCE"
         title="Farm to Table Dining"
