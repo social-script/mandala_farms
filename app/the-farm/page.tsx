@@ -8,6 +8,10 @@ import TestimonialSection from '../components/TestimonialSection'
 import WelcomeCarouselWithSubheadings from '../components/WelcomeCarouselWithSubheadings'
 import WelcomeCarousel from '../components/WelcomeCarousel'
 
+export const runtime = 'edge'
+export const preferredRegion = 'auto'
+export const dynamic = 'force-static'
+
 export default function TheFarmPage() {
   return (
     <div className="bg-gradient-to-b from-[#2F4538] to-[#243A2D]">

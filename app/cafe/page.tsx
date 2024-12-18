@@ -5,7 +5,11 @@ import Footer from '../components/Footer'
 import Welcome from '../components/Welcome'
 import WelcomeWithSubheadings from '../components/WelcomeWithSubheadings'
 import ImageGallery from '../components/ImageGallery'
-import TestimonialSection from '../components/TestimonialSection'
+import dynamic from 'next/dynamic'
+
+const TestimonialSection = dynamic(() => import('../components/TestimonialSection'), {
+  loading: () => <div className="h-96 bg-[#FAF3E0] animate-pulse" />
+})
 
 export default function CafePage() {
   return (

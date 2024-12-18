@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from "@/components/ui/button"
+import OptimizedImage from './OptimizedImage'
 
 export default function Hero() {
   return (
@@ -22,13 +23,13 @@ export default function Hero() {
         </div>
         
         <div className="relative h-[240px] sm:h-[300px] md:h-[400px] rounded-[2rem] md:rounded-[2.5rem] overflow-hidden">
-          <Image
-            src="/hero_img.jpg"
-            alt="Luxury eco farm stay"
-            fill
-            className="object-cover transition-transform duration-700 hover:scale-105"
-            priority
-          />
+          <OptimizedImage
+  src="/hero_img.jpg"
+  alt="Luxury eco farm stay"
+  fill
+  priority
+  className="object-cover transition-transform duration-700 hover:scale-105"
+/>
           <Link href="/our-story">
             <Button 
               className="absolute bottom-4 md:bottom-8 right-4 md:right-8 bg-white/90 backdrop-blur-sm text-[#2F4538] 
@@ -40,7 +41,10 @@ export default function Hero() {
             </Button>
           </Link>
         </div>
+        
       </div>
+      
     </section>
+    
   )
 } 
