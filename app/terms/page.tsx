@@ -61,7 +61,7 @@ export default function TermsPage() {
             <h2 className="text-2xl md:text-3xl font-playfair text-[#E8FF8B] mb-6">4. Guest Responsibilities</h2>
             <p className="text-white/80 mb-4">Guests are expected to:</p>
             <ul className="list-disc pl-6 text-white/80 mb-4">
-              <li>Respect the farm's eco-friendly policies and guidelines.</li>
+              <li>Respect the farm&apos;s eco-friendly policies and guidelines.</li>
               <li>Ensure proper use of all facilities and amenities.</li>
               <li>Avoid causing damage to property or disruption to other guests.</li>
             </ul>
@@ -74,7 +74,7 @@ export default function TermsPage() {
 
             <h3 className="text-xl font-playfair text-[#E8FF8B] mb-4">b. Safety and Conduct</h3>
             <ul className="list-disc pl-6 text-white/80 mb-8">
-              <li>For your safety and that of others, please adhere to the farm's safety instructions.</li>
+              <li>For your safety and that of others, please adhere to the farm&apos;s safety instructions.</li>
               <li>Smoking is prohibited in all indoor spaces and designated non-smoking areas.</li>
               <li>Pets are welcome with prior approval and must be supervised at all times.</li>
             </ul>
