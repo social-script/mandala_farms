@@ -52,9 +52,9 @@ export default function Navbar() {
               <Link href="/tariff" className="text-white hover:text-[#E8FF8B] transition-colors font-poppins">
                 Tariff
               </Link>          
-              <Link href="/cafe" className="text-white hover:text-[#E8FF8B] transition-colors font-poppins">
+              {/* <Link href="/cafe" className="text-white hover:text-[#E8FF8B] transition-colors font-poppins">
                 Café & Restaurant
-              </Link>
+              </Link> */}
             </nav>
 
             {/* Contact Us Button - Desktop */}
@@ -124,13 +124,13 @@ export default function Navbar() {
               >
                 Tariff
               </Link>
-              <Link 
+              {/* <Link 
                 href="/cafe" 
                 className="text-white hover:text-[#E8FF8B] transition-colors font-poppins py-2"
                 onClick={toggleMenu}
               >
                 Café & Restaurant
-              </Link>
+              </Link> */}
               <Link 
                 href="/contact-us" 
                 className="inline-block"
