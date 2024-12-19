@@ -1,13 +1,23 @@
+'use client'
+
 import Image from "next/image"
 import { Badge } from "@/components/ui/badge"
 import { ArrowRight } from "lucide-react"
+import Link from "next/link"
+import { motion } from "framer-motion"
 
 export default function ModernMinimal() {
   return (
     <section className="container mx-auto px-4 py-6 md:py-14">
       <div className="grid grid-cols-12 gap-6 md:gap-8">
         {/* Left large card */}
-        <div className="col-span-12 lg:col-span-8 relative rounded-[2rem] md:rounded-[2.5rem] overflow-hidden h-[400px] md:h-[500px] lg:h-[650px] group">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="col-span-12 lg:col-span-8 relative rounded-[2rem] md:rounded-[2.5rem] overflow-hidden h-[400px] md:h-[500px] lg:h-[650px] group"
+        >
           <Image
             src="/bedroom.jpeg"
             alt="Luxury eco-friendly suite at Mandala Farms"
@@ -24,34 +34,50 @@ export default function ModernMinimal() {
               Harmonious<br />Eco-Living Spaces
             </h2>
           </div>
-          <button className="absolute top-6 md:top-12 right-6 md:right-12 p-3 md:p-4 bg-white/10 backdrop-blur-sm rounded-full hover:bg-white/20 transition-all">
-            <ArrowRight className="w-5 h-5 md:w-6 md:h-6 text-white" />
-          </button>
-        </div>
+          <Link href="/the-cottages">
+            <button className="absolute top-6 md:top-12 right-6 md:right-12 p-3 md:p-4 bg-white/10 backdrop-blur-sm rounded-full hover:bg-white/20 transition-all">
+              <ArrowRight className="w-5 h-5 md:w-6 md:h-6 text-white" />
+            </button>
+          </Link>
+        </motion.div>
 
         {/* Right column cards */}
         <div className="col-span-12 lg:col-span-4 flex flex-col gap-6 md:gap-8">
           {/* Top card */}
-          <div className="relative rounded-[2rem] md:rounded-[2.5rem] overflow-hidden h-[240px] md:h-[280px] bg-[#FAF3E0] p-6 md:p-10 group">
-            {/* <Badge variant="default" className="bg-white text-black mb-4 md:mb-5 text-sm md:text-base px-3 md:px-4 py-1.5 rounded-full 
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+            className="relative rounded-[2rem] md:rounded-[2.5rem] overflow-hidden h-[200px] md:h-[280px] bg-[#FAF3E0] p-5 md:p-10 group"
+          >
+            <Badge variant="default" className="bg-white text-black mb-3 md:mb-5 text-base md:text-base px-4 md:px-4 py-1.5 rounded-full 
                       transition-transform duration-300 hover:scale-105">
               Café cum Restaurant 
-            </Badge> */}
-            <div className="max-w-[85%]">
-              <p className="font-poppins text-[#2F4538]/70 text-xs md:text-sm leading-relaxed mb-3 md:mb-4">
+            </Badge>
+            <div className="max-w-[80%]">
+              <p className="font-poppins text-[#2F4538]/70 text-sm md:text-sm leading-relaxed mb-2 md:mb-2">
                 Indulge in farm-fresh cuisine that celebrates the authentic tastes and stories of the land.
               </p>
-              <h3 className="font-playfair text-[#2F4538] text-2xl md:text-3xl font-medium leading-tight">
+              <h3 className="font-playfair text-[#2F4538] text-xl md:text-3xl font-medium leading-tight">
                 Locally Crafted Flavors
               </h3>
             </div>
-            {/* <button className="absolute top-6 md:top-10 right-6 md:right-10 p-3 md:p-4 bg-[#2F4538]/5 rounded-full hover:bg-[#2F4538]/10 transition-all">
-              <ArrowRight className="w-5 h-5 md:w-6 md:h-6 text-[#2F4538]/70" />
-            </button> */}
-          </div>
+            <Link href="/cafe">
+              <button className="absolute top-8 md:top-10 right-8 md:right-10 p-3 md:p-4 bg-[#2F4538]/5 rounded-full hover:bg-[#2F4538]/10 transition-all">
+                <ArrowRight className="w-5 h-5 md:w-6 md:h-6 text-[#2F4538]/70" />
+              </button>
+            </Link>
+          </motion.div>
 
           {/* Bottom card */}
-          <div className="relative rounded-[2rem] md:rounded-[2.5rem] overflow-hidden h-[280px] md:h-[350px] group">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
+            className="relative rounded-[2rem] md:rounded-[2.5rem] overflow-hidden h-[280px] md:h-[350px] group"
+          >
             <Image
               src="/araku_valley.jpeg"
               alt="Sustainable furniture at Mandala Farms"
@@ -70,10 +96,12 @@ export default function ModernMinimal() {
                 Experience the seamless fusion of sustainable luxury and natural beauty of Araku Valley.
               </p>
             </div>
-            {/* <button className="absolute top-6 md:top-10 right-6 md:right-10 p-3 md:p-4 bg-white/10 backdrop-blur-sm rounded-full hover:bg-white/20 transition-all">
-              <ArrowRight className="w-5 h-5 md:w-6 md:h-6 text-white" />
-            </button> */}
-          </div>
+            <Link href="/araku-valley">
+              <button className="absolute top-6 md:top-10 right-6 md:right-10 p-3 md:p-4 bg-white/10 backdrop-blur-sm rounded-full hover:bg-white/20 transition-all">
+                <ArrowRight className="w-5 h-5 md:w-6 md:h-6 text-white" />
+              </button>
+            </Link>
+          </motion.div>
         </div>
       </div>
     </section>

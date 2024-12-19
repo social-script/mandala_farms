@@ -55,7 +55,7 @@ export default function NewspaperFeature() {
               onHoverEnd={() => setIsHovered(false)}
             >
               <motion.div 
-                className="relative aspect-[5/4] md:aspect-[4/5] w-full overflow-hidden rounded-xl md:rounded-[2rem]"
+                className="relative aspect-[4/5] md:aspect-[4/5] w-full overflow-hidden rounded-xl md:rounded-[2rem]"
                 animate={{
                   scale: isHovered ? 1.05 : 1,
                   transition: { duration: 0.6, ease: "easeOut" }
