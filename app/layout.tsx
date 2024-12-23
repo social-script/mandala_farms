@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display, Poppins } from 'next/font/google';
 import "./globals.css";
 import JsonLd from './components/JsonLd';
+import { Providers } from './providers'
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -98,7 +99,9 @@ export default function RootLayout({
         <JsonLd />
       </head>
       <body className={`${playfair.variable} ${poppins.variable} antialiased`}>
-        {children}
+        <Providers>
+          {children}
+        </Providers>
       </body>
     </html>
   );
