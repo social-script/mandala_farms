@@ -25,7 +25,6 @@ export default function Home() {
       />
       <CafeRestaurant />
       <DynamicCarousel />
-      
       <ExclusiveCarousel />
       <div className="bg-[#2F4538]">
         <TestimonialSection  />

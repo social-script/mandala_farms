@@ -1,12 +1,12 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
-import StoryHeader from '../components/StoryHeader'
+import CafeNavbar from '../components/CafeNavbar'
 import Footer from '../components/Footer'
 import Welcome from '../components/Welcome'
-import WelcomeWithSubheadings from '../components/WelcomeWithSubheadings'
-import ImageGallery from '../components/ImageGallery'
 import dynamic from 'next/dynamic'
-import BalloonFeature from '../components/BalloonFeature'
+import CafeHero from '../components/CafeHero'
+import CafeRestaurant from '../components/CafeRestaurant'
+import PhotoCarousel from '../components/PhotoCarousel'
+import WelcomeCarouselWithSubheadings from '../components/WelcomeCarouselWithSubheadings'
 
 const TestimonialSection = dynamic(() => import('../components/TestimonialSection'), {
   loading: () => <div className="h-96 bg-[#FAF3E0] animate-pulse" />
@@ -15,62 +15,64 @@ const TestimonialSection = dynamic(() => import('../components/TestimonialSectio
 export default function CafePage() {
   return (
     <div className="bg-gradient-to-b from-[#2F4538] to-[#243A2D]">
-      <Navbar />
-      <BalloonFeature />
-      <StoryHeader 
-        badge="DINING EXPERIENCE"
-        title="Farm to Table Dining"
-        description="Savor the authentic flavors of Araku Valley in our eco-friendly café, where every dish tells a story of sustainable farming and culinary artistry."
-      />
-      <div className="bg-[#2F4538]">
-        <Welcome 
-          badge="CULINARY ARTISTRY"
-          title="Where Local Flavors Meet Modern Cuisine"
-          description="Our chefs craft exceptional dishes using fresh ingredients from our organic farm, blending traditional recipes with contemporary techniques."
-          buttonText="View Menu"
-          imageSrc="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf"
-          imageAlt="Farm to table dining experience"
-        />
-      </div>
-      <div className="bg-[#2F4538]">
-        <Welcome 
-          badge="AMBIANCE"
-          title="Dine with Panoramic Valley Views"
-          description="Enjoy your meal in our thoughtfully designed space that offers breathtaking views of Araku Valley, creating an unforgettable dining experience."
-          buttonText="Book a Table"
-          imageSrc="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4"
-          imageAlt="Restaurant interior with valley views"
-        />
-      </div>
+      <CafeNavbar />
+      <CafeHero />
+      <CafeRestaurant />
       <div className="bg-[#FAF3E0]">
-        <WelcomeWithSubheadings 
-          badge="SPECIAL EXPERIENCES"
-          title="Curated Dining Experiences"
-          description="Immerse yourself in unique culinary experiences that celebrate local flavors and sustainable dining."
-          subheadings={[
-            {
-              heading: "Private Dining",
-              text: "Intimate dining settings with personalized service and custom menus."
-            },
-            {
-              heading: "Chef's Table",
-              text: "Interactive dining experience with our chef, featuring special tasting menus."
-            },
-            {
-              heading: "Sunset Dinners",
-              text: "Special evening experiences with carefully curated menus and valley views."
-            }
-          ]}
-          buttonText="Reserve Experience"
-          imageSrc="https://images.unsplash.com/photo-1414235077428-338989a2e8c0"
-          imageAlt="Special dining experience at Mandala Farms"
-          theme="light"
+      <WelcomeCarouselWithSubheadings 
+  badge="AMBIANCE"
+  title="Dine with Panoramic Valley Views"
+  description="Enjoy your meal in our thoughtfully designed space that offers breathtaking views of Araku Valley, creating an unforgettable dining experience."
+  subheadings={[
+    {
+      heading: "Panoramic Views",
+      text: "Enjoy breathtaking views of Araku Valley from our restaurant."
+    },
+    {
+      heading: "Outdoor Seating",
+      text: "Enjoy a meal in our outdoor seating area, surrounded by nature."
+    }
+  ]}
+  media={[
+    {
+      type: 'image',
+      src: "/cafe2.jpeg",
+      alt: "Luxury eco-cottage view 1"
+    },
+    {
+      type: 'image',
+      src: "/cafe3.jpeg",
+      alt: "Workshop activities"
+    },
+    {
+      type: 'image',
+      src: "/insta1.jpg",
+      alt: "Workshop activities"
+    },
+    {
+      type: 'image',
+      src: "/cafe4.jpeg",
+      alt: "Workshop activities"
+    }
+  ]}
+  theme="light"
+/>
+</div>
+      <div className="bg-[#2F4538]">
+        <Welcome 
+          badge="SPECIAL MUSIC NIGHT"
+          title="A Night of Melody and Magic"
+          description="Join us at Mandala Farm for an enchanting Music Night, where soul-stirring songs and melodies set the tone for an unforgettable evening. Let the rhythm of the night elevate your senses as you enjoy the beauty of live performances in our serene, luxurious eco-farm setting."
+          buttonText="Reserve Your Spot"
+          imageSrc="/cafe1.jpeg"
+          imageAlt="Restaurant interior with valley views"
+          buttonLink="/contact-us"
         />
       </div>
-      <ImageGallery />
       <div className="bg-[#FAF3E0]">
         <TestimonialSection theme="light" />
       </div>
+      <PhotoCarousel />
       <Footer />
     </div>
   )

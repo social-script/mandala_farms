@@ -42,6 +42,9 @@ export default function Navbar() {
               <Link href="/the-farm" className="text-white hover:text-[#E8FF8B] transition-colors font-poppins">
                 The Farm
               </Link>
+              <Link href="/cafe" className="text-white hover:text-[#E8FF8B] transition-colors font-poppins">
+                Café & Restaurant
+              </Link>
               <Link href="/araku-valley" className="text-white hover:text-[#E8FF8B] transition-colors font-poppins">
                 Araku Valley
               </Link>
@@ -51,9 +54,7 @@ export default function Navbar() {
               <Link href="/tariff" className="text-white hover:text-[#E8FF8B] transition-colors font-poppins">
                 Tariff
               </Link>          
-              {/* <Link href="/cafe" className="text-white hover:text-[#E8FF8B] transition-colors font-poppins">
-                Café & Restaurant
-              </Link> */}
+              
             </nav>
 
             {/* Contact Us Button - Desktop */}
@@ -110,12 +111,19 @@ export default function Navbar() {
                 The Farm
               </Link>
               <Link 
+                href="/cafe" 
+                className="text-white hover:text-[#E8FF8B] transition-colors font-poppins py-2"
+                onClick={toggleMenu}
+              >
+                Café & Restaurant
+              </Link>
+              <Link 
                 href="/araku-valley" 
                 className="text-white hover:text-[#E8FF8B] transition-colors font-poppins py-2"
                 onClick={toggleMenu}
               >
                 Araku Valley
-              </Link>
+              </Link> 
               <Link 
                 href="/tariff" 
                 className="text-white hover:text-[#E8FF8B] transition-colors font-poppins py-2"
@@ -123,13 +131,7 @@ export default function Navbar() {
               >
                 Tariff
               </Link>
-              {/* <Link 
-                href="/cafe" 
-                className="text-white hover:text-[#E8FF8B] transition-colors font-poppins py-2"
-                onClick={toggleMenu}
-              >
-                Café & Restaurant
-              </Link> */}
+              
               <Link 
                 href="/contact-us" 
                 className="inline-block"

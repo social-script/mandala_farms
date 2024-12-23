@@ -1,6 +1,8 @@
 import { Utensils, Leaf } from 'lucide-react'
 import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
+import { Button } from '@/components/ui/button'
+import Link from 'next/link'
 
 export default function CafeRestaurant() {
   return (
@@ -68,11 +70,14 @@ export default function CafeRestaurant() {
                   </div>
                 </div>
               </div>
-
-              {/* <Button className="bg-[#2F4538] text-white hover:bg-[#2F4538]/90 rounded-full px-4 md:px-8 py-2 md:py-3 text-sm md:text-base">
-                Reserve a Table
+              <div>
+              <Link href="/contact-us">
+              <Button className="bg-[#2F4538] text-white hover:bg-[#2F4538]/90 rounded-full px-4 md:px-8 py-2 md:py-3 text-sm md:text-base">
+                Contact Us
                 <span className="ml-2">→</span>
-              </Button> */}
+              </Button>
+              </Link>
+              </div>
             </div>
           </div>
         </CardContent>
