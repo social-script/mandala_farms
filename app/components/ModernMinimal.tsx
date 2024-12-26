@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import { ArrowRight } from "lucide-react"
 import Link from "next/link"
 import { motion } from "framer-motion"
+import OptimizedImage from "./OptimizedImage"
 
 export default function ModernMinimal() {
   return (
@@ -18,7 +19,7 @@ export default function ModernMinimal() {
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="col-span-12 lg:col-span-8 relative rounded-[2rem] md:rounded-[2.5rem] overflow-hidden h-[400px] md:h-[500px] lg:h-[650px] group"
         >
-          <Image
+          <OptimizedImage
             src="/bedroom.jpeg"
             alt="Luxury eco-friendly suite at Mandala Farms"
             fill
@@ -78,7 +79,7 @@ export default function ModernMinimal() {
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
             className="relative rounded-[2rem] md:rounded-[2.5rem] overflow-hidden h-[280px] md:h-[350px] group"
           >
-            <Image
+            <OptimizedImage
               src="/araku_valley.jpeg"
               alt="Sustainable furniture at Mandala Farms"
               fill

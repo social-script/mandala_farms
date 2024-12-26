@@ -72,7 +72,7 @@ export default function CafeNavbar() {
               <Link href="/tariff" className="text-white hover:text-[#E8FF8B] transition-colors font-poppins">
                 Tariff
               </Link>  
-              <Link href="/contact">
+              <Link href="/contact-us">
                 <Button className="rounded-full font-poppins bg-white/90 text-[#2F4538] hover:bg-white">
                   Book Now
                 </Button>
