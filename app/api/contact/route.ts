@@ -15,7 +15,7 @@ export async function POST(req: Request) {
 
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: 'stephenstarc01@gmail.com', // Your receiving email
+      to: ['mandalafarmsarakuvalley@gmail.com', 'stephenstarc01@gmail.com'].join(', '), // Multiple recipients
       subject: `New Contact Form Submission from ${name}`,
       html: `
         <h2>New Contact Form Submission</h2>
@@ -32,9 +32,10 @@ export async function POST(req: Request) {
       { message: "Email sent successfully" },
       { status: 200 }
     );
-  } catch (error) {
+  } catch (err) {
+    console.error('Email sending error:', err);
     return NextResponse.json(
-      { error: "Failed to send email" },
+      { error: "Failed to send email", details: err instanceof Error ? err.message : 'Unknown error' },
       { status: 500 }
     );
   }
