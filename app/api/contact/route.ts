@@ -3,6 +3,10 @@ import nodemailer from 'nodemailer';
 
 export async function POST(req: Request) {
   try {
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+      throw new Error('Email configuration is missing');
+    }
+
     const { name, email, message } = await req.json();
 
     const transporter = nodemailer.createTransport({
@@ -33,9 +37,18 @@ export async function POST(req: Request) {
       { status: 200 }
     );
   } catch (err) {
-    console.error('Email sending error:', err);
+    // More detailed error logging
+    console.error('Email sending error details:', {
+      error: err,
+      emailUser: process.env.EMAIL_USER ? 'Set' : 'Not set',
+      emailPass: process.env.EMAIL_PASS ? 'Set' : 'Not set'
+    });
+
     return NextResponse.json(
-      { error: "Failed to send email", details: err instanceof Error ? err.message : 'Unknown error' },
+      { 
+        error: "Failed to send email", 
+        details: err instanceof Error ? err.message : 'Unknown error'
+      },
       { status: 500 }
     );
   }
