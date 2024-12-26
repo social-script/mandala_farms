@@ -3,6 +3,7 @@ import { Playfair_Display, Poppins } from 'next/font/google';
 import "./globals.css";
 import JsonLd from './components/JsonLd';
 import { Providers } from './providers'
+import { Toaster } from "@/components/ui/toaster";
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -102,6 +103,7 @@ export default function RootLayout({
         <Providers>
           {children}
         </Providers>
+        <Toaster />
       </body>
     </html>
   );
