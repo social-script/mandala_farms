@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { cn } from "@/lib/utils"
+import { MessageCircle } from "lucide-react"
 
 interface ContactSectionProps {
   theme?: 'dark' | 'light'
@@ -101,6 +102,20 @@ export default function ContactSection({ theme = 'dark' }: ContactSectionProps) 
                   )}>
                     (Secondary)
                   </span>
+                </Link>
+                <Link 
+                  href="https://wa.me/919529652435" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={cn(
+                    "font-poppins text-lg mt-4 inline-flex items-center gap-3 px-4 py-2 rounded-full transition-all duration-300",
+                    theme === 'light' 
+                      ? 'bg-[#2F4538]/5 text-[#2F4538] hover:bg-[#2F4538]/10' 
+                      : 'bg-white/10 text-white hover:bg-white/20'
+                  )}
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  <span>Chat on WhatsApp</span>
                 </Link>
               </div>
             </div>

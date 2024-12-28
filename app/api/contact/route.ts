@@ -7,7 +7,7 @@ export async function POST(req: Request) {
       throw new Error('Email configuration is missing');
     }
 
-    const { name, email, message } = await req.json();
+    const { name, email, phone, message } = await req.json();
 
     const transporter = nodemailer.createTransport({
       service: 'gmail',
@@ -25,6 +25,7 @@ export async function POST(req: Request) {
         <h2>New Contact Form Submission</h2>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
         <p><strong>Message:</strong></p>
         <p>${message}</p>
       `

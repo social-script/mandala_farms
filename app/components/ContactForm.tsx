@@ -8,6 +8,8 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { useToast } from "@/hooks/use-toast"
+import Link from "next/link"
+import { MessageCircle } from "lucide-react"
 
 interface ContactFormProps {
   theme?: 'dark' | 'light'
@@ -27,6 +29,7 @@ export default function ContactForm({ theme = 'dark' }: ContactFormProps) {
       const data = {
         name: formData.get('name'),
         email: formData.get('email'),
+        phone: formData.get('phone'),
         message: formData.get('message')
       }
 
@@ -91,6 +94,22 @@ export default function ContactForm({ theme = 'dark' }: ContactFormProps) {
               )}>
                 Experience the perfect blend of luxury and nature at Mandala Farms. We&apos;re here to assist you with your booking and answer any questions.
               </p>
+              
+              {/* Add WhatsApp Button */}
+              <Link 
+                href="https://wa.me/919529652435" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(
+                  "font-poppins inline-flex items-center gap-3 px-6 py-3 rounded-full transition-all duration-300",
+                  theme === 'light' 
+                    ? 'bg-[#2F4538] text-white hover:bg-[#2F4538]/90' 
+                    : 'bg-white text-[#2F4538] hover:bg-white/90'
+                )}
+              >
+                <MessageCircle className="w-5 h-5" />
+                <span className="font-medium">Chat with us on WhatsApp</span>
+              </Link>
             </div>
           </div>
 
@@ -136,6 +155,33 @@ export default function ContactForm({ theme = 'dark' }: ContactFormProps) {
                     : 'border-white/20 focus-visible:border-white text-white placeholder:text-white/50'
                 )}
                 placeholder="Your email address"
+              />
+            </div>
+
+            <div className="space-y-3">
+              <Label htmlFor="phone" className={cn(
+                "font-poppins text-sm tracking-wider flex items-center gap-2",
+                theme === 'light' ? 'text-[#2F4538]' : 'text-white'
+              )}>
+                PHONE
+                <span className={cn(
+                  "text-xs font-normal",
+                  theme === 'light' ? 'text-[#2F4538]/60' : 'text-white/60'
+                )}>
+                  (Optional)
+                </span>
+              </Label>
+              <Input
+                name="phone"
+                id="phone"
+                type="tel"
+                className={cn(
+                  "font-poppins h-14 bg-transparent rounded-full px-6",
+                  theme === 'light' 
+                    ? 'border-[#2F4538]/20 focus-visible:border-[#2F4538] text-[#2F4538] placeholder:text-[#2F4538]/50' 
+                    : 'border-white/20 focus-visible:border-white text-white placeholder:text-white/50'
+                )}
+                placeholder="Your phone number"
               />
             </div>
 
