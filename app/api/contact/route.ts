@@ -23,12 +23,19 @@ async function verifyRecaptcha(token: string) {
       parent: projectPath,
     });
 
-    if (!response.tokenProperties?.valid) {
+    // Check if token properties exist and are valid
+    if (!response.tokenProperties || !response.tokenProperties.valid) {
       console.error(`Token invalid: ${response.tokenProperties?.invalidReason}`);
       return false;
     }
 
-    return response.riskAnalysis?.score! > 0.5;
+    // Check if risk analysis exists and score is above threshold
+    if (!response.riskAnalysis || !response.riskAnalysis.score) {
+      console.error('Risk analysis or score missing');
+      return false;
+    }
+
+    return response.riskAnalysis.score > 0.5;
   } catch (error) {
     console.error('reCAPTCHA verification error:', error);
     return false;

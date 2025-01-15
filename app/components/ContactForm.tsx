@@ -8,7 +8,6 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { useToast } from "@/hooks/use-toast"
-import Link from "next/link"
 import { MessageCircle } from "lucide-react"
 
 interface ContactFormProps {
@@ -25,8 +24,6 @@ declare global {
     };
   }
 }
-
-const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
 
 function WhatsAppVerification({ 
   theme, 
