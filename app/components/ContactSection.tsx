@@ -80,33 +80,18 @@ export default function ContactSection({ theme = 'dark' }: ContactSectionProps) 
                 </p>
                 <div className="space-y-2">
                   <Link 
-                    href="tel:+919529652435" 
+                    href="tel:+918309750409" 
                     className={cn(
                       "font-poppins text-lg hover:underline decoration-[#E8FF8B] underline-offset-4 flex items-center gap-2 group",
                       theme === 'light' ? 'text-[#2F4538]' : 'text-white'
                     )}
                   >
-                    <span className="font-medium">+91 95296 52435</span>
+                    <span className="font-medium">+91 83097 50409</span>
                     <span className={cn(
                       "text-sm",
                       theme === 'light' ? 'text-[#2F4538]/70' : 'text-white/70'
                     )}>
                       (Primary)
-                    </span>
-                  </Link>
-                  <Link 
-                    href="tel:+919529641655" 
-                    className={cn(
-                      "font-poppins text-lg hover:underline decoration-[#E8FF8B] underline-offset-4 flex items-center gap-2 group",
-                      theme === 'light' ? 'text-[#2F4538]' : 'text-white'
-                    )}
-                  >
-                    <span className="font-medium">+91 95296 41655</span>
-                    <span className={cn(
-                      "text-sm",
-                      theme === 'light' ? 'text-[#2F4538]/70' : 'text-white/70'
-                    )}>
-                      (Secondary)
                     </span>
                   </Link>
                   <Button
